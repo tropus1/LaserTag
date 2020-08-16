@@ -1,0 +1,425 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"40 LReception.h
+[s S10 `uc 1 `uc 1 ]
+[n S10 . _8L _8H ]
+"36
+[u S9 `ui 1 `S10 1 ]
+[n S9 int16_8 _16 . ]
+"10 LReception.c
+[c E1 0 1 .. ]
+[n E1 bits off on  ]
+"46 LReception.h
+[s S11 `S9 1 `uc 1 `uc 1 `uc -> 15 `i `c 1 `uc 1 `uc 1 `E1 1 ]
+[n S11 reception capturado esperandoInicioRL DatoLaser DatosRecibidosL contDatosRecL cantDatosRecL nBitR DatosLRecibidoFlag ]
+"63 LReception.c
+[c E5 0 1 2 3 4 5 6 7 8 9 10 11 .. ]
+[n E5 gameState Inicializacion EsperaJuego ConfigurarRF EsperaConfigJuego ConfigurarJuego EsperaInicioJuego EnJuego Finalizar ErrorRF ErrorConfig ErrorInit ErrorLaser  ]
+"55 config.h
+[s S1 `uc 1 `uc 1 `uc 1 `uc 1 `E1 1 `E5 1 ]
+[n S1 gameConfig SumaAsesinato RestaMuerte SumaAsistencia RestaKillEquipo FriendlyFire Estado ]
+"63 LReception.c
+[c E29 0 1 2 3 .. ]
+[n E29 playerState Vivo Muerto Revivir Morir  ]
+[c E35 0 1 2 3 4 5 .. ]
+[n E35 equipo Rojo Azul Verde Celeste Amarillo violeta  ]
+"91 player.h
+[s S8 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S8 . Hitter0 Hitter1 Hitter2 Hitter3 Hitter4 Hitter5 Hitter6 Hitter7 Hitter8 Hitter9 ]
+"88
+[u S7 `uc -> 10 `i `S8 1 ]
+[n S7 . IDHitters Hitters ]
+"49
+[s S2 `uc 1 `uc 1 `uc 1 `E1 1 `E1 1 ]
+[n S2 gun damage tDisparos contDisparo disparando habilDisparo ]
+"68
+[s S5 `uc 1 `uc 1 ]
+[n S5 . puntosL puntosH ]
+"65
+[u S4 `i 1 `S5 1 ]
+[n S4 . puntos . ]
+"58
+[s S3 `uc 1 `uc 1 `uc 1 `uc 1 `S4 1 ]
+[n S3 statistics Kills Deaths Assists Punteria . ]
+"75
+[s S6 `E29 1 `E35 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `S7 1 `S2 1 `S3 1 ]
+[n S6 player estado equipo ID Vida Balas BalasMax Cargadores CargadoresMax contAssits IDKiller . Arma Estadisticas ]
+[; ;config.h: 33: typedef enum bits
+[; ;config.h: 34: {
+[; ;config.h: 35: off = 0,
+[; ;config.h: 36: on = 1
+[; ;config.h: 37: }Bit;
+[; ;config.h: 39: typedef enum gameState
+[; ;config.h: 40: {
+[; ;config.h: 41: Inicializacion,
+[; ;config.h: 42: EsperaJuego,
+[; ;config.h: 43: ConfigurarRF,
+[; ;config.h: 44: EsperaConfigJuego,
+[; ;config.h: 45: ConfigurarJuego,
+[; ;config.h: 46: EsperaInicioJuego,
+[; ;config.h: 47: EnJuego,
+[; ;config.h: 48: Finalizar,
+[; ;config.h: 49: ErrorRF,
+[; ;config.h: 50: ErrorConfig,
+[; ;config.h: 51: ErrorInit,
+[; ;config.h: 52: ErrorLaser
+[; ;config.h: 53: }EstadoJuego;
+[; ;config.h: 55: typedef struct gameConfig
+[; ;config.h: 56: {
+[; ;config.h: 57: unsigned char SumaAsesinato;
+[; ;config.h: 58: unsigned char RestaMuerte;
+[; ;config.h: 59: unsigned char SumaAsistencia;
+[; ;config.h: 60: unsigned char RestaKillEquipo;
+[; ;config.h: 61: Bit FriendlyFire;
+[; ;config.h: 62: EstadoJuego Estado;
+[; ;config.h: 63: }GameConfig;
+[; ;config.h: 66: void Config(void);
+[; ;player.h: 30: typedef enum playerState
+[; ;player.h: 31: {
+[; ;player.h: 32: Vivo,
+[; ;player.h: 33: Muerto,
+[; ;player.h: 34: Revivir,
+[; ;player.h: 35: Morir
+[; ;player.h: 36: }EstadoJugador;
+[; ;player.h: 38: typedef enum equipo
+[; ;player.h: 39: {
+[; ;player.h: 40: Rojo = 0,
+[; ;player.h: 41: Azul = 1,
+[; ;player.h: 42: Verde = 2,
+[; ;player.h: 43: Celeste = 3,
+[; ;player.h: 44: Amarillo = 4,
+[; ;player.h: 45: violeta = 5
+[; ;player.h: 46: }Equipo;
+[; ;player.h: 49: typedef struct gun
+[; ;player.h: 50: {
+[; ;player.h: 51: unsigned char damage;
+[; ;player.h: 52: unsigned char tDisparos;
+[; ;player.h: 53: unsigned char contDisparo;
+[; ;player.h: 54: Bit disparando;
+[; ;player.h: 55: Bit habilDisparo;
+[; ;player.h: 56: }Gun;
+[; ;player.h: 58: typedef struct statistics
+[; ;player.h: 59: {
+[; ;player.h: 60: unsigned char Kills;
+[; ;player.h: 61: unsigned char Deaths;
+[; ;player.h: 62: unsigned char Assists;
+[; ;player.h: 63: unsigned char Punteria;
+[; ;player.h: 64: union
+[; ;player.h: 65: {
+[; ;player.h: 66: int puntos;
+[; ;player.h: 67: struct
+[; ;player.h: 68: {
+[; ;player.h: 69: unsigned char puntosL;
+[; ;player.h: 70: unsigned char puntosH;
+[; ;player.h: 71: };
+[; ;player.h: 72: };
+[; ;player.h: 73: }Statistics;
+[; ;player.h: 75: typedef struct player
+[; ;player.h: 76: {
+[; ;player.h: 77: EstadoJugador estado;
+[; ;player.h: 78: Equipo equipo;
+[; ;player.h: 79: unsigned char ID;
+[; ;player.h: 80: unsigned char Vida;
+[; ;player.h: 81: unsigned char Balas, BalasMax;
+[; ;player.h: 82: unsigned char Cargadores, CargadoresMax;
+[; ;player.h: 83: unsigned char contAssits;
+[; ;player.h: 84: unsigned char IDKiller;
+[; ;player.h: 87: union
+[; ;player.h: 88: {
+[; ;player.h: 89: unsigned char IDHitters[10];
+[; ;player.h: 90: struct
+[; ;player.h: 91: {
+[; ;player.h: 92: unsigned char Hitter0;
+[; ;player.h: 93: unsigned char Hitter1;
+[; ;player.h: 94: unsigned char Hitter2;
+[; ;player.h: 95: unsigned char Hitter3;
+[; ;player.h: 96: unsigned char Hitter4;
+[; ;player.h: 97: unsigned char Hitter5;
+[; ;player.h: 98: unsigned char Hitter6;
+[; ;player.h: 99: unsigned char Hitter7;
+[; ;player.h: 100: unsigned char Hitter8;
+[; ;player.h: 101: unsigned char Hitter9;
+[; ;player.h: 102: }Hitters;
+[; ;player.h: 103: };
+[; ;player.h: 105: Gun Arma;
+[; ;player.h: 106: Statistics Estadisticas;
+[; ;player.h: 107: }Player;
+[; ;LReception.h: 36: typedef union int16_8
+[; ;LReception.h: 37: {
+[; ;LReception.h: 38: unsigned int _16;
+[; ;LReception.h: 39: struct
+[; ;LReception.h: 40: {
+[; ;LReception.h: 41: unsigned char _8L;
+[; ;LReception.h: 42: unsigned char _8H;
+[; ;LReception.h: 43: };
+[; ;LReception.h: 44: }Int16_8;
+[; ;LReception.h: 46: typedef struct reception
+[; ;LReception.h: 47: {
+[; ;LReception.h: 48: Int16_8 capturado;
+[; ;LReception.h: 49: unsigned char esperandoInicioRL;
+[; ;LReception.h: 50: unsigned char DatoLaser;
+[; ;LReception.h: 51: unsigned char DatosRecibidosL[15];
+[; ;LReception.h: 52: signed char contDatosRecL;
+[; ;LReception.h: 53: unsigned char cantDatosRecL;
+[; ;LReception.h: 54: unsigned char nBitR;
+[; ;LReception.h: 55: enum bits DatosLRecibidoFlag;
+[; ;LReception.h: 56: }Reception;
+[; ;LReception.h: 58: void Capture(Reception *reception);
+[; ;LReception.h: 60: void ReadShot(GameConfig *gameConfig, Player *player, Reception *reception);
+"9 LReception.c
+[v _Capture `(v ~T0 @X0 1 ef1`*S11 ]
+"10
+{
+[; ;LReception.c: 9: void Capture(Reception *reception)
+[; ;LReception.c: 10: {
+[e :U _Capture ]
+"9
+[v _reception `*S11 ~T0 @X0 1 r1 ]
+"10
+[f ]
+[; ;LReception.c: 11: if(reception->esperandoInicioRL)
+"11
+[e $ ! != -> . *U _reception 1 `i -> -> -> 0 `i `uc `i 13  ]
+[; ;LReception.c: 12: {
+"12
+{
+[; ;LReception.c: 13: if((reception->capturado._16 >= 2650) && (reception->capturado._16 <= 2750))
+"13
+[e $ ! && >= . . *U _reception 0 0 -> -> 2650 `i `ui <= . . *U _reception 0 0 -> -> 2750 `i `ui 14  ]
+[; ;LReception.c: 14: {
+"14
+{
+[; ;LReception.c: 15: reception->esperandoInicioRL = 0;
+"15
+[e = . *U _reception 1 -> -> 0 `i `uc ]
+"16
+}
+[e :U 14 ]
+"17
+}
+[; ;LReception.c: 16: }
+[; ;LReception.c: 17: }
+[e $U 15  ]
+"18
+[e :U 13 ]
+[; ;LReception.c: 18: else
+[; ;LReception.c: 19: {
+"19
+{
+[; ;LReception.c: 20: if((reception->capturado._16 >= 2650) && (reception->capturado._16 <= 2750))
+"20
+[e $ ! && >= . . *U _reception 0 0 -> -> 2650 `i `ui <= . . *U _reception 0 0 -> -> 2750 `i `ui 16  ]
+[; ;LReception.c: 21: {
+"21
+{
+[; ;LReception.c: 22: reception->DatoLaser = reception->DatoLaser >> 1;
+"22
+[e = . *U _reception 2 -> >> -> . *U _reception 2 `i -> 1 `i `uc ]
+[; ;LReception.c: 23: reception->nBitR++;
+"23
+[e ++ . *U _reception 6 -> -> 1 `i `uc ]
+[; ;LReception.c: 24: reception->DatoLaser = reception->DatoLaser | 128;
+"24
+[e = . *U _reception 2 -> | -> . *U _reception 2 `i -> 128 `i `uc ]
+"25
+}
+[; ;LReception.c: 25: }
+[e $U 17  ]
+"26
+[e :U 16 ]
+[; ;LReception.c: 26: else if((reception->capturado._16 >= 2220) && (reception->capturado._16 <= 2320))
+[e $ ! && >= . . *U _reception 0 0 -> -> 2220 `i `ui <= . . *U _reception 0 0 -> -> 2320 `i `ui 18  ]
+[; ;LReception.c: 27: {
+"27
+{
+[; ;LReception.c: 28: reception->DatoLaser = reception->DatoLaser >> 1;
+"28
+[e = . *U _reception 2 -> >> -> . *U _reception 2 `i -> 1 `i `uc ]
+[; ;LReception.c: 29: reception->nBitR++;
+"29
+[e ++ . *U _reception 6 -> -> 1 `i `uc ]
+"30
+}
+[; ;LReception.c: 30: }
+[e $U 19  ]
+"31
+[e :U 18 ]
+[; ;LReception.c: 31: else
+[; ;LReception.c: 32: {
+"32
+{
+[; ;LReception.c: 33: reception->esperandoInicioRL = 1;
+"33
+[e = . *U _reception 1 -> -> 1 `i `uc ]
+[; ;LReception.c: 34: reception->nBitR = 0;
+"34
+[e = . *U _reception 6 -> -> 0 `i `uc ]
+"35
+}
+[e :U 19 ]
+[e :U 17 ]
+[; ;LReception.c: 35: }
+[; ;LReception.c: 37: if(reception->nBitR == 8)
+"37
+[e $ ! == -> . *U _reception 6 `i -> 8 `i 20  ]
+[; ;LReception.c: 38: {
+"38
+{
+[; ;LReception.c: 39: reception->nBitR = 0;
+"39
+[e = . *U _reception 6 -> -> 0 `i `uc ]
+[; ;LReception.c: 40: if(reception->contDatosRecL == 0)
+"40
+[e $ ! == -> . *U _reception 4 `i -> 0 `i 21  ]
+[; ;LReception.c: 41: {
+"41
+{
+[; ;LReception.c: 42: reception->cantDatosRecL = reception->DatoLaser;
+"42
+[e = . *U _reception 5 . *U _reception 2 ]
+"43
+}
+[; ;LReception.c: 43: }
+[e $U 22  ]
+"44
+[e :U 21 ]
+[; ;LReception.c: 44: else
+[; ;LReception.c: 45: {
+"45
+{
+[; ;LReception.c: 46: reception->DatosRecibidosL[reception->contDatosRecL - 1] = reception->DatoLaser;
+"46
+[e = *U + &U . *U _reception 3 * -> -> - -> . *U _reception 4 `i -> 1 `i `ui `ux -> -> # *U &U . *U _reception 3 `ui `ux . *U _reception 2 ]
+[; ;LReception.c: 48: if(reception->cantDatosRecL == reception->contDatosRecL)
+"48
+[e $ ! == -> . *U _reception 5 `i -> . *U _reception 4 `i 23  ]
+[; ;LReception.c: 49: {
+"49
+{
+[; ;LReception.c: 50: reception->esperandoInicioRL = 1;
+"50
+[e = . *U _reception 1 -> -> 1 `i `uc ]
+[; ;LReception.c: 51: reception->contDatosRecL = -1;
+"51
+[e = . *U _reception 4 -> -U -> 1 `i `c ]
+[; ;LReception.c: 52: reception->DatoLaser = 0;
+"52
+[e = . *U _reception 2 -> -> 0 `i `uc ]
+[; ;LReception.c: 53: reception->DatosLRecibidoFlag = 1;
+"53
+[e = . *U _reception 7 -> -> 1 `i `E1 ]
+"54
+}
+[e :U 23 ]
+"55
+}
+[e :U 22 ]
+[; ;LReception.c: 54: }
+[; ;LReception.c: 55: }
+[; ;LReception.c: 57: reception->contDatosRecL++;
+"57
+[e ++ . *U _reception 4 -> -> 1 `i `c ]
+"58
+}
+[e :U 20 ]
+"59
+}
+[e :U 15 ]
+[; ;LReception.c: 58: }
+[; ;LReception.c: 59: }
+[; ;LReception.c: 60: }
+"60
+[e :UE 12 ]
+}
+"62
+[v _ReadShot `(v ~T0 @X0 1 ef3`*S1`*S6`*S11 ]
+"63
+{
+[; ;LReception.c: 62: void ReadShot(GameConfig *gameConfig, Player *player, Reception *reception)
+[; ;LReception.c: 63: {
+[e :U _ReadShot ]
+"62
+[v _gameConfig `*S1 ~T0 @X0 1 r1 ]
+[v _player `*S6 ~T0 @X0 1 r2 ]
+[v _reception `*S11 ~T0 @X0 1 r3 ]
+"63
+[f ]
+[; ;LReception.c: 64: if(player->estado == Vivo)
+"64
+[e $ ! == -> . *U _player 0 `i -> . `E29 0 `i 25  ]
+[; ;LReception.c: 65: {
+"65
+{
+[; ;LReception.c: 66: if(reception->DatosRecibidosL[1] != player->ID)
+"66
+[e $ ! != -> *U + &U . *U _reception 3 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _reception 3 `ui `ux `i -> . *U _player 2 `i 26  ]
+[; ;LReception.c: 67: {
+"67
+{
+[; ;LReception.c: 68: if(gameConfig->FriendlyFire || reception->DatosRecibidosL[2] != player->equipo)
+"68
+[e $ ! || != -> . *U _gameConfig 4 `i -> -> -> 0 `i `E1 `i != -> *U + &U . *U _reception 3 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U _reception 3 `ui `ux `i -> . *U _player 1 `i 27  ]
+[; ;LReception.c: 69: {
+"69
+{
+[; ;LReception.c: 70: if(player->Vida < reception->DatosRecibidosL[3])
+"70
+[e $ ! < -> . *U _player 3 `i -> *U + &U . *U _reception 3 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _reception 3 `ui `ux `i 28  ]
+[; ;LReception.c: 71: {
+"71
+{
+[; ;LReception.c: 72: player->Vida = 0;
+"72
+[e = . *U _player 3 -> -> 0 `i `uc ]
+[; ;LReception.c: 73: if(player->Estadisticas.puntos < gameConfig->RestaMuerte )
+"73
+[e $ ! < . . . *U _player 12 4 0 -> . *U _gameConfig 1 `i 29  ]
+[; ;LReception.c: 74: {
+"74
+{
+[; ;LReception.c: 75: player->Estadisticas.puntos = 0;
+"75
+[e = . . . *U _player 12 4 0 -> 0 `i ]
+"76
+}
+[; ;LReception.c: 76: }
+[e $U 30  ]
+"77
+[e :U 29 ]
+[; ;LReception.c: 77: else
+[; ;LReception.c: 78: {
+"78
+{
+[; ;LReception.c: 79: player->Estadisticas.puntos -= gameConfig->RestaMuerte;
+"79
+[e =- . . . *U _player 12 4 0 -> . *U _gameConfig 1 `i ]
+"80
+}
+[e :U 30 ]
+"81
+}
+[; ;LReception.c: 80: }
+[; ;LReception.c: 81: }
+[e $U 31  ]
+"82
+[e :U 28 ]
+[; ;LReception.c: 82: else
+[; ;LReception.c: 83: player->Vida -= reception->DatosRecibidosL[3];
+"83
+[e =- . *U _player 3 *U + &U . *U _reception 3 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _reception 3 `ui `ux ]
+[e :U 31 ]
+"84
+}
+[e :U 27 ]
+"85
+}
+[e :U 26 ]
+"86
+}
+[e :U 25 ]
+[; ;LReception.c: 84: }
+[; ;LReception.c: 85: }
+[; ;LReception.c: 86: }
+[; ;LReception.c: 87: }
+"87
+[e :UE 24 ]
+}
