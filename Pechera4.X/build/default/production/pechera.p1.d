@@ -3,6 +3,5 @@
  pechera.c  \
 player.h  \
 LReception.h  \
-RFID.h  \
 config.h  \
 EUSART.h 

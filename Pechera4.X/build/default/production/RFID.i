@@ -1,7 +1,7 @@
 
 # 1 "RFID.c"
 
-# 2 "RFID.h"
+# 60 "RFID.h"
 typedef struct spi
 {
 unsigned char Datos[50];

@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"93 pechera.c
+"92 pechera.c
 [c E5825 0 1 .. ]
 [n E5825 bits off on  ]
 [c E5829 0 1 2 3 4 5 6 7 8 9 10 11 .. ]
@@ -7,7 +7,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "55 config.h
 [s S849 `uc 1 `uc 1 `uc 1 `uc 1 `E5825 1 `E5829 1 ]
 [n S849 gameConfig SumaAsesinato RestaMuerte SumaAsistencia RestaKillEquipo FriendlyFire Estado ]
-"95 pechera.c
+"94 pechera.c
 [c E5853 0 1 2 3 .. ]
 [n E5853 playerState Vivo Muerto Revivir Morir  ]
 [c E5859 0 1 2 3 4 5 .. ]
@@ -33,12 +33,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "75
 [s S854 `E5853 1 `E5859 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `S855 1 `S850 1 `S851 1 ]
 [n S854 player estado equipo ID Vida Balas BalasMax Cargadores CargadoresMax contAssits IDKiller . Arma Estadisticas ]
-"2 RFID.h
-[s S860 `uc -> 50 `i `uc 1 `uc 1 ]
-[n S860 spi Datos contDatos cantDatos ]
 "37 EUSART.h
-[s S861 `uc -> 50 `i `uc 1 `uc 1 `E5825 1 ]
-[n S861 eusart Datos cont CantDatos Transmitiendo ]
+[s S860 `uc -> 50 `i `uc 1 `uc 1 `E5825 1 ]
+[n S860 eusart Datos cont CantDatos Transmitiendo ]
 "40 LReception.h
 [s S858 `uc 1 `uc 1 ]
 [n S858 . _8L _8H ]
@@ -206,13 +203,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "18725
 [v _LA3 `Vb ~T0 @X0 0 e@31819 ]
 "47 EUSART.h
-[v _EUSARTEnviar2 `(v ~T0 @X0 0 ef2`*uc`*S861 ]
+[v _EUSARTEnviar2 `(v ~T0 @X0 0 ef2`*uc`*S860 ]
 "5090 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f46k22.h
 [v _TXREG2 `Vuc ~T0 @X0 0 e@3955 ]
-"15259
-[v _SSP1BUF `Vuc ~T0 @X0 0 e@4041 ]
-"18869
-[v _LC0 `Vb ~T0 @X0 0 e@31832 ]
 "9909
 [s S454 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S454 . TMR1GIE TMR3GIE TMR5GIE CTMUIE TX2IE RC2IE BCL2IE SSP2IE ]
@@ -241,8 +234,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "66 config.h
 [v _Config `(v ~T0 @X0 0 ef ]
-"24 RFID.h
-[v _RFIDInit `(v ~T0 @X0 0 ef1`*S860 ]
 "6571 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f46k22.h
 [s S341 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S341 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -7039,28 +7030,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;LReception.h: 56: }Reception;
 [; ;LReception.h: 58: void Capture(Reception *reception);
 [; ;LReception.h: 60: void ReadShot(GameConfig *gameConfig, Player *player, Reception *reception);
-[; ;RFID.h: 2: typedef struct spi
-[; ;RFID.h: 3: {
-[; ;RFID.h: 4: unsigned char Datos[50];
-[; ;RFID.h: 5: unsigned char contDatos;
-[; ;RFID.h: 6: unsigned char cantDatos;
-[; ;RFID.h: 7: }SPI;
-[; ;RFID.h: 9: typedef enum rfidcommand
-[; ;RFID.h: 10: {
-[; ;RFID.h: 11: Idle = 0,
-[; ;RFID.h: 12: Mem = 1,
-[; ;RFID.h: 13: GenerateRandomID = 2,
-[; ;RFID.h: 14: CalcCRC = 3,
-[; ;RFID.h: 15: Transmit = 4,
-[; ;RFID.h: 16: NoCmdChange = 7,
-[; ;RFID.h: 17: Receive = 8,
-[; ;RFID.h: 18: Transceive = 12,
-[; ;RFID.h: 19: MFAuthent = 14,
-[; ;RFID.h: 20: SoftReset = 15
-[; ;RFID.h: 21: }RFIDCommands;
-[; ;RFID.h: 24: void RFIDInit(SPI* spi);
-[; ;RFID.h: 25: void RFIDRecive(SPI *spi);
-[; ;RFID.h: 26: void RFIDTransmit(SPI *spi, char *data, char length);
 [; ;EUSART.h: 37: typedef struct eusart
 [; ;EUSART.h: 38: {
 [; ;EUSART.h: 39: char Datos[50];
@@ -7071,46 +7040,43 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;EUSART.h: 45: void EUSARTEnviar(char *reg, EUSART *e, char index);
 [; ;EUSART.h: 46: void EUSARTEnviar1(char *reg, EUSART *e);
 [; ;EUSART.h: 47: void EUSARTEnviar2(char *reg, EUSART *e);
-"93 pechera.c
+"92 pechera.c
 [v _configJuego `S849 ~T0 @X0 1 e ]
-[; ;pechera.c: 93: GameConfig configJuego;
-"95
+[; ;pechera.c: 92: GameConfig configJuego;
+"94
 [v _jugador `S854 ~T0 @X0 1 e ]
-[; ;pechera.c: 95: Player jugador;
+[; ;pechera.c: 94: Player jugador;
 "97
-[v _rfid `S860 ~T0 @X0 1 e ]
-[; ;pechera.c: 97: SPI rfid;
-"99
-[v _debug `S861 ~T0 @X0 1 e ]
-[; ;pechera.c: 99: EUSART debug;
-"100
+[v _debug `S860 ~T0 @X0 1 e ]
+[; ;pechera.c: 97: EUSART debug;
+"98
 [v _debugCont `uc ~T0 @X0 1 e ]
 [i _debugCont
 -> -> 0 `i `uc
 ]
-[; ;pechera.c: 100: char debugCont = 0;
-"103
+[; ;pechera.c: 98: char debugCont = 0;
+"101
 [v _preambulo `Cuc ~T0 @X0 1 e ]
 [i _preambulo
 -> -> 127 `i `uc
 ]
-[; ;pechera.c: 103: const unsigned char preambulo = 127;
-"104
+[; ;pechera.c: 101: const unsigned char preambulo = 127;
+"102
 [v _DatosEL `uc ~T0 @X0 -> 6 `i e ]
-[; ;pechera.c: 104: char DatosEL[6];
-"105
+[; ;pechera.c: 102: char DatosEL[6];
+"103
 [v _primerosBitsEL `uc ~T0 @X0 1 e ]
 [i _primerosBitsEL
 -> -> 0 `i `uc
 ]
-[; ;pechera.c: 105: unsigned char primerosBitsEL = 0;
-"106
+[; ;pechera.c: 103: unsigned char primerosBitsEL = 0;
+"104
 [v _flancoEL `E5825 ~T0 @X0 1 e ]
 [i _flancoEL
 -> -> 1 `i `E5825
 ]
-[; ;pechera.c: 106: Bit flancoEL = 1;
-"107
+[; ;pechera.c: 104: Bit flancoEL = 1;
+"105
 [v _contByteEL `uc ~T0 @X0 1 e ]
 [i _contByteEL
 -> -> 0 `i `uc
@@ -7119,1004 +7085,943 @@ Version 3.2 HI-TECH Software Intermediate Code
 [i _contBitEL
 -> -> 1 `i `uc
 ]
-[; ;pechera.c: 107: unsigned char contByteEL = 0, contBitEL = 1;
-"108
+[; ;pechera.c: 105: unsigned char contByteEL = 0, contBitEL = 1;
+"106
 [v _cantBytesEL `uc ~T0 @X0 1 e ]
 [i _cantBytesEL
 -> -> 0 `i `uc
 ]
-[; ;pechera.c: 108: unsigned char cantBytesEL = 0;
-"110
+[; ;pechera.c: 106: unsigned char cantBytesEL = 0;
+"108
 [v _receptores `S859 ~T0 @X0 -> 3 `i e ]
-[; ;pechera.c: 110: Reception receptores[3];
+[; ;pechera.c: 108: Reception receptores[3];
 [v $root$_IRS_High `(v ~T0 @X0 0 e ]
-"112
+"110
 [v _IRS_High `(v ~T6 @X0 1 ef ]
-"113
+"111
 {
-[; ;pechera.c: 112: void __interrupt(high_priority) IRS_High()
-[; ;pechera.c: 113: {
+[; ;pechera.c: 110: void __interrupt(high_priority) IRS_High()
+[; ;pechera.c: 111: {
 [e :U _IRS_High ]
 [f ]
-[; ;pechera.c: 115: if(INTCONbits.INT0IE && INTCONbits.INT0IF)
-"115
-[e $ ! && != -> . . _INTCONbits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 863  ]
-[; ;pechera.c: 116: {
-"116
+[; ;pechera.c: 113: if(INTCONbits.INT0IE && INTCONbits.INT0IF)
+"113
+[e $ ! && != -> . . _INTCONbits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 862  ]
+[; ;pechera.c: 114: {
+"114
 {
-[; ;pechera.c: 119: INTCONbits.INT0IF = 0;
-"119
+[; ;pechera.c: 117: INTCONbits.INT0IF = 0;
+"117
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"120
+"118
+}
+[e :U 862 ]
+[; ;pechera.c: 118: }
+[; ;pechera.c: 121: if(INTCON3bits.INT2IE && INTCON3bits.INT2IF)
+"121
+[e $ ! && != -> . . _INTCON3bits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCON3bits 0 1 `i -> -> -> 0 `i `Vuc `i 863  ]
+[; ;pechera.c: 122: {
+"122
+{
+[; ;pechera.c: 124: debug.Datos[3]^=1;
+"124
+[e =^ *U + &U . _debug 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 1 `i `uc ]
+[; ;pechera.c: 126: INTCON3bits.INT2IF = 0;
+"126
+[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+"127
 }
 [e :U 863 ]
-[; ;pechera.c: 120: }
-[; ;pechera.c: 123: if(INTCON3bits.INT2IE && INTCON3bits.INT2IF)
-"123
-[e $ ! && != -> . . _INTCON3bits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCON3bits 0 1 `i -> -> -> 0 `i `Vuc `i 864  ]
-[; ;pechera.c: 124: {
-"124
-{
-[; ;pechera.c: 126: debug.Datos[3]^=1;
-"126
-[e =^ *U + &U . _debug 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 1 `i `uc ]
-[; ;pechera.c: 128: INTCON3bits.INT2IF = 0;
-"128
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+[; ;pechera.c: 127: }
+[; ;pechera.c: 129: if(PIE5bits.TMR4IE && PIR5bits.TMR4IF)
 "129
-}
-[e :U 864 ]
-[; ;pechera.c: 129: }
-[; ;pechera.c: 131: if(PIE5bits.TMR4IE && PIR5bits.TMR4IF)
+[e $ ! && != -> . . _PIE5bits 0 0 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR5bits 0 0 `i -> -> -> 0 `i `Vuc `i 864  ]
+[; ;pechera.c: 130: {
+"130
+{
+[; ;pechera.c: 131: if(primerosBitsEL < 15)
 "131
-[e $ ! && != -> . . _PIE5bits 0 0 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR5bits 0 0 `i -> -> -> 0 `i `Vuc `i 865  ]
+[e $ ! < -> _primerosBitsEL `i -> 15 `i 865  ]
 [; ;pechera.c: 132: {
 "132
 {
-[; ;pechera.c: 133: if(primerosBitsEL < 15)
+[; ;pechera.c: 133: if(flancoEL)
 "133
-[e $ ! < -> _primerosBitsEL `i -> 15 `i 866  ]
+[e $ ! != -> _flancoEL `i -> -> -> 0 `i `E5825 `i 866  ]
 [; ;pechera.c: 134: {
 "134
 {
-[; ;pechera.c: 135: if(flancoEL)
+[; ;pechera.c: 135: LA2 = 1;
 "135
-[e $ ! != -> _flancoEL `i -> -> -> 0 `i `E5825 `i 867  ]
-[; ;pechera.c: 136: {
-"136
-{
-[; ;pechera.c: 137: LA2 = 1;
-"137
 [e = _LA2 -> -> 1 `i `b ]
-[; ;pechera.c: 139: PR4 = 137;
-"139
+[; ;pechera.c: 137: PR4 = 137;
+"137
 [e = _PR4 -> -> 137 `i `uc ]
-[; ;pechera.c: 141: flancoEL = 0;
-"141
+[; ;pechera.c: 139: flancoEL = 0;
+"139
 [e = _flancoEL -> -> 0 `i `E5825 ]
-"142
+"140
 }
-[; ;pechera.c: 142: }
-[e $U 868  ]
-"143
-[e :U 867 ]
-[; ;pechera.c: 143: else
-[; ;pechera.c: 144: {
-"144
+[; ;pechera.c: 140: }
+[e $U 867  ]
+"141
+[e :U 866 ]
+[; ;pechera.c: 141: else
+[; ;pechera.c: 142: {
+"142
 {
-[; ;pechera.c: 145: LA2 = 0;
-"145
+[; ;pechera.c: 143: LA2 = 0;
+"143
 [e = _LA2 -> -> 0 `i `b ]
-[; ;pechera.c: 146: PR4 = 70;
-"146
+[; ;pechera.c: 144: PR4 = 70;
+"144
 [e = _PR4 -> -> 70 `i `uc ]
-[; ;pechera.c: 147: flancoEL = 1;
-"147
+[; ;pechera.c: 145: flancoEL = 1;
+"145
 [e = _flancoEL -> -> 1 `i `E5825 ]
-[; ;pechera.c: 148: primerosBitsEL++;
-"148
+[; ;pechera.c: 146: primerosBitsEL++;
+"146
 [e ++ _primerosBitsEL -> -> 1 `i `uc ]
+"147
+}
+[e :U 867 ]
 "149
 }
-[e :U 868 ]
-"151
-}
+[; ;pechera.c: 147: }
 [; ;pechera.c: 149: }
-[; ;pechera.c: 151: }
-[e $U 869  ]
+[e $U 868  ]
+"150
+[e :U 865 ]
+[; ;pechera.c: 150: else if(primerosBitsEL == 15)
+[e $ ! == -> _primerosBitsEL `i -> 15 `i 869  ]
+[; ;pechera.c: 151: {
+"151
+{
+[; ;pechera.c: 152: if(flancoEL)
 "152
-[e :U 866 ]
-[; ;pechera.c: 152: else if(primerosBitsEL == 15)
-[e $ ! == -> _primerosBitsEL `i -> 15 `i 870  ]
+[e $ ! != -> _flancoEL `i -> -> -> 0 `i `E5825 `i 870  ]
 [; ;pechera.c: 153: {
 "153
 {
-[; ;pechera.c: 154: if(flancoEL)
+[; ;pechera.c: 154: LA2 = 1;
 "154
-[e $ ! != -> _flancoEL `i -> -> -> 0 `i `E5825 `i 871  ]
-[; ;pechera.c: 155: {
-"155
-{
-[; ;pechera.c: 156: LA2 = 1;
-"156
 [e = _LA2 -> -> 1 `i `b ]
-[; ;pechera.c: 158: PR4 = 177;
-"158
+[; ;pechera.c: 156: PR4 = 177;
+"156
 [e = _PR4 -> -> 177 `i `uc ]
-[; ;pechera.c: 160: flancoEL = 0;
-"160
+[; ;pechera.c: 158: flancoEL = 0;
+"158
 [e = _flancoEL -> -> 0 `i `E5825 ]
-"161
+"159
 }
-[; ;pechera.c: 161: }
-[e $U 872  ]
-"162
-[e :U 871 ]
-[; ;pechera.c: 162: else
-[; ;pechera.c: 163: {
-"163
-{
-[; ;pechera.c: 164: LA2 = 0;
-"164
-[e = _LA2 -> -> 0 `i `b ]
-[; ;pechera.c: 165: PR4 = 70;
-"165
-[e = _PR4 -> -> 70 `i `uc ]
-[; ;pechera.c: 166: flancoEL = 1;
-"166
-[e = _flancoEL -> -> 1 `i `E5825 ]
-[; ;pechera.c: 167: primerosBitsEL++;
-"167
-[e ++ _primerosBitsEL -> -> 1 `i `uc ]
-"168
-}
-[e :U 872 ]
-"169
-}
-[; ;pechera.c: 168: }
-[; ;pechera.c: 169: }
-[e $U 873  ]
-"170
+[; ;pechera.c: 159: }
+[e $U 871  ]
+"160
 [e :U 870 ]
-[; ;pechera.c: 170: else if(primerosBitsEL == 16)
-[e $ ! == -> _primerosBitsEL `i -> 16 `i 874  ]
+[; ;pechera.c: 160: else
+[; ;pechera.c: 161: {
+"161
+{
+[; ;pechera.c: 162: LA2 = 0;
+"162
+[e = _LA2 -> -> 0 `i `b ]
+[; ;pechera.c: 163: PR4 = 70;
+"163
+[e = _PR4 -> -> 70 `i `uc ]
+[; ;pechera.c: 164: flancoEL = 1;
+"164
+[e = _flancoEL -> -> 1 `i `E5825 ]
+[; ;pechera.c: 165: primerosBitsEL++;
+"165
+[e ++ _primerosBitsEL -> -> 1 `i `uc ]
+"166
+}
+[e :U 871 ]
+"167
+}
+[; ;pechera.c: 166: }
+[; ;pechera.c: 167: }
+[e $U 872  ]
+"168
+[e :U 869 ]
+[; ;pechera.c: 168: else if(primerosBitsEL == 16)
+[e $ ! == -> _primerosBitsEL `i -> 16 `i 873  ]
+[; ;pechera.c: 169: {
+"169
+{
+[; ;pechera.c: 170: if(flancoEL)
+"170
+[e $ ! != -> _flancoEL `i -> -> -> 0 `i `E5825 `i 874  ]
 [; ;pechera.c: 171: {
 "171
 {
-[; ;pechera.c: 172: if(flancoEL)
+[; ;pechera.c: 172: LA2 = 1;
 "172
-[e $ ! != -> _flancoEL `i -> -> -> 0 `i `E5825 `i 875  ]
-[; ;pechera.c: 173: {
-"173
-{
-[; ;pechera.c: 174: LA2 = 1;
-"174
 [e = _LA2 -> -> 1 `i `b ]
-[; ;pechera.c: 176: if(DatosEL[contByteEL] & contBitEL)
-"176
-[e $ ! != & -> *U + &U _DatosEL * -> _contByteEL `ux -> -> # *U &U _DatosEL `ui `ux `i -> _contBitEL `i -> 0 `i 876  ]
-[; ;pechera.c: 177: PR4 = 177;
-"177
+[; ;pechera.c: 174: if(DatosEL[contByteEL] & contBitEL)
+"174
+[e $ ! != & -> *U + &U _DatosEL * -> _contByteEL `ux -> -> # *U &U _DatosEL `ui `ux `i -> _contBitEL `i -> 0 `i 875  ]
+[; ;pechera.c: 175: PR4 = 177;
+"175
 [e = _PR4 -> -> 177 `i `uc ]
-[e $U 877  ]
-"178
-[e :U 876 ]
-[; ;pechera.c: 178: else
-[; ;pechera.c: 179: PR4 = 137;
-"179
-[e = _PR4 -> -> 137 `i `uc ]
-[e :U 877 ]
-[; ;pechera.c: 181: flancoEL = 0;
-"181
-[e = _flancoEL -> -> 0 `i `E5825 ]
-"182
-}
-[; ;pechera.c: 182: }
-[e $U 878  ]
-"183
+[e $U 876  ]
+"176
 [e :U 875 ]
-[; ;pechera.c: 183: else
-[; ;pechera.c: 184: {
-"184
-{
-[; ;pechera.c: 185: LA2 = 0;
-"185
-[e = _LA2 -> -> 0 `i `b ]
-[; ;pechera.c: 186: PR4 = 70;
-"186
-[e = _PR4 -> -> 70 `i `uc ]
-[; ;pechera.c: 187: flancoEL = 1;
-"187
-[e = _flancoEL -> -> 1 `i `E5825 ]
-[; ;pechera.c: 188: contBitEL = contBitEL << 1;
-"188
-[e = _contBitEL -> << -> _contBitEL `i -> 1 `i `uc ]
-[; ;pechera.c: 190: if(contBitEL == 0)
-"190
-[e $ ! == -> _contBitEL `i -> 0 `i 879  ]
-[; ;pechera.c: 191: {
-"191
-{
-[; ;pechera.c: 192: contBitEL = 1;
-"192
-[e = _contBitEL -> -> 1 `i `uc ]
-[; ;pechera.c: 193: contByteEL++;
-"193
-[e ++ _contByteEL -> -> 1 `i `uc ]
-[; ;pechera.c: 195: if(contByteEL == cantBytesEL)
-"195
-[e $ ! == -> _contByteEL `i -> _cantBytesEL `i 880  ]
-[; ;pechera.c: 196: {
-"196
-{
-[; ;pechera.c: 197: primerosBitsEL++;
-"197
-[e ++ _primerosBitsEL -> -> 1 `i `uc ]
-"198
+[; ;pechera.c: 176: else
+[; ;pechera.c: 177: PR4 = 137;
+"177
+[e = _PR4 -> -> 137 `i `uc ]
+[e :U 876 ]
+[; ;pechera.c: 179: flancoEL = 0;
+"179
+[e = _flancoEL -> -> 0 `i `E5825 ]
+"180
 }
-[e :U 880 ]
-"199
+[; ;pechera.c: 180: }
+[e $U 877  ]
+"181
+[e :U 874 ]
+[; ;pechera.c: 181: else
+[; ;pechera.c: 182: {
+"182
+{
+[; ;pechera.c: 183: LA2 = 0;
+"183
+[e = _LA2 -> -> 0 `i `b ]
+[; ;pechera.c: 184: PR4 = 70;
+"184
+[e = _PR4 -> -> 70 `i `uc ]
+[; ;pechera.c: 185: flancoEL = 1;
+"185
+[e = _flancoEL -> -> 1 `i `E5825 ]
+[; ;pechera.c: 186: contBitEL = contBitEL << 1;
+"186
+[e = _contBitEL -> << -> _contBitEL `i -> 1 `i `uc ]
+[; ;pechera.c: 188: if(contBitEL == 0)
+"188
+[e $ ! == -> _contBitEL `i -> 0 `i 878  ]
+[; ;pechera.c: 189: {
+"189
+{
+[; ;pechera.c: 190: contBitEL = 1;
+"190
+[e = _contBitEL -> -> 1 `i `uc ]
+[; ;pechera.c: 191: contByteEL++;
+"191
+[e ++ _contByteEL -> -> 1 `i `uc ]
+[; ;pechera.c: 193: if(contByteEL == cantBytesEL)
+"193
+[e $ ! == -> _contByteEL `i -> _cantBytesEL `i 879  ]
+[; ;pechera.c: 194: {
+"194
+{
+[; ;pechera.c: 195: primerosBitsEL++;
+"195
+[e ++ _primerosBitsEL -> -> 1 `i `uc ]
+"196
 }
 [e :U 879 ]
-"200
+"197
 }
 [e :U 878 ]
-"201
+"198
 }
+[e :U 877 ]
+"199
+}
+[; ;pechera.c: 196: }
+[; ;pechera.c: 197: }
 [; ;pechera.c: 198: }
 [; ;pechera.c: 199: }
-[; ;pechera.c: 200: }
-[; ;pechera.c: 201: }
-[e $U 881  ]
+[e $U 880  ]
+"200
+[e :U 873 ]
+[; ;pechera.c: 200: else
+[; ;pechera.c: 201: {
+"201
+{
+[; ;pechera.c: 202: if(flancoEL)
 "202
-[e :U 874 ]
-[; ;pechera.c: 202: else
+[e $ ! != -> _flancoEL `i -> -> -> 0 `i `E5825 `i 881  ]
 [; ;pechera.c: 203: {
 "203
 {
-[; ;pechera.c: 204: if(flancoEL)
+[; ;pechera.c: 204: LA2 = 1;
 "204
-[e $ ! != -> _flancoEL `i -> -> -> 0 `i `E5825 `i 882  ]
-[; ;pechera.c: 205: {
-"205
-{
-[; ;pechera.c: 206: LA2 = 1;
-"206
 [e = _LA2 -> -> 1 `i `b ]
-[; ;pechera.c: 207: flancoEL = 0;
-"207
+[; ;pechera.c: 205: flancoEL = 0;
+"205
 [e = _flancoEL -> -> 0 `i `E5825 ]
-[; ;pechera.c: 208: PR4 = 50;
-"208
+[; ;pechera.c: 206: PR4 = 50;
+"206
 [e = _PR4 -> -> 50 `i `uc ]
-"209
+"207
 }
-[; ;pechera.c: 209: }
-[e $U 883  ]
-"210
-[e :U 882 ]
-[; ;pechera.c: 210: else
-[; ;pechera.c: 211: {
-"211
-{
-[; ;pechera.c: 212: primerosBitsEL = 0;
-"212
-[e = _primerosBitsEL -> -> 0 `i `uc ]
-[; ;pechera.c: 213: flancoEL = 1;
-"213
-[e = _flancoEL -> -> 1 `i `E5825 ]
-[; ;pechera.c: 214: contBitEL = 1;
-"214
-[e = _contBitEL -> -> 1 `i `uc ]
-[; ;pechera.c: 215: contByteEL = 0;
-"215
-[e = _contByteEL -> -> 0 `i `uc ]
-[; ;pechera.c: 216: T4CONbits.TMR4ON = 0;
-"216
-[e = . . _T4CONbits 0 1 -> -> 0 `i `uc ]
-[; ;pechera.c: 217: PIE5bits.TMR4IE = 0;
-"217
-[e = . . _PIE5bits 0 0 -> -> 0 `i `uc ]
-[; ;pechera.c: 218: LA2 = 0;
-"218
-[e = _LA2 -> -> 0 `i `b ]
-"219
-}
-[e :U 883 ]
-"220
-}
+[; ;pechera.c: 207: }
+[e $U 882  ]
+"208
 [e :U 881 ]
-[e :U 873 ]
-[e :U 869 ]
-[; ;pechera.c: 219: }
-[; ;pechera.c: 220: }
-[; ;pechera.c: 222: PIR5bits.TMR4IF = 0;
-"222
-[e = . . _PIR5bits 0 0 -> -> 0 `i `uc ]
-"223
+[; ;pechera.c: 208: else
+[; ;pechera.c: 209: {
+"209
+{
+[; ;pechera.c: 210: primerosBitsEL = 0;
+"210
+[e = _primerosBitsEL -> -> 0 `i `uc ]
+[; ;pechera.c: 211: flancoEL = 1;
+"211
+[e = _flancoEL -> -> 1 `i `E5825 ]
+[; ;pechera.c: 212: contBitEL = 1;
+"212
+[e = _contBitEL -> -> 1 `i `uc ]
+[; ;pechera.c: 213: contByteEL = 0;
+"213
+[e = _contByteEL -> -> 0 `i `uc ]
+[; ;pechera.c: 214: T4CONbits.TMR4ON = 0;
+"214
+[e = . . _T4CONbits 0 1 -> -> 0 `i `uc ]
+[; ;pechera.c: 215: PIE5bits.TMR4IE = 0;
+"215
+[e = . . _PIE5bits 0 0 -> -> 0 `i `uc ]
+[; ;pechera.c: 216: LA2 = 0;
+"216
+[e = _LA2 -> -> 0 `i `b ]
+"217
 }
-[e :U 865 ]
-[; ;pechera.c: 223: }
-[; ;pechera.c: 224: }
-"224
-[e :UE 862 ]
+[e :U 882 ]
+"218
+}
+[e :U 880 ]
+[e :U 872 ]
+[e :U 868 ]
+[; ;pechera.c: 217: }
+[; ;pechera.c: 218: }
+[; ;pechera.c: 220: PIR5bits.TMR4IF = 0;
+"220
+[e = . . _PIR5bits 0 0 -> -> 0 `i `uc ]
+"221
+}
+[e :U 864 ]
+[; ;pechera.c: 221: }
+[; ;pechera.c: 222: }
+"222
+[e :UE 861 ]
 }
 [v $root$_IRS_Low `(v ~T0 @X0 0 e ]
-"226
+"224
 [v _IRS_Low `(v ~T7 @X0 1 ef ]
-"227
+"225
 {
-[; ;pechera.c: 226: void __interrupt(low_priority) IRS_Low()
-[; ;pechera.c: 227: {
+[; ;pechera.c: 224: void __interrupt(low_priority) IRS_Low()
+[; ;pechera.c: 225: {
 [e :U _IRS_Low ]
 [f ]
-[; ;pechera.c: 229: if(PIE1bits.CCP1IE && PIR1bits.CCP1IF)
-"229
-[e $ ! && != -> . . _PIE1bits 0 2 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR1bits 0 2 `i -> -> -> 0 `i `Vuc `i 885  ]
-[; ;pechera.c: 230: {
-"230
+[; ;pechera.c: 227: if(PIE1bits.CCP1IE && PIR1bits.CCP1IF)
+"227
+[e $ ! && != -> . . _PIE1bits 0 2 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR1bits 0 2 `i -> -> -> 0 `i `Vuc `i 884  ]
+[; ;pechera.c: 228: {
+"228
 {
-[; ;pechera.c: 231: TMR1L = 0;
-"231
+[; ;pechera.c: 229: TMR1L = 0;
+"229
 [e = _TMR1L -> -> 0 `i `uc ]
-[; ;pechera.c: 232: TMR1H = 0;
-"232
+[; ;pechera.c: 230: TMR1H = 0;
+"230
 [e = _TMR1H -> -> 0 `i `uc ]
-[; ;pechera.c: 234: receptores[0].capturado._8L = CCPR1L;
-"234
+[; ;pechera.c: 232: receptores[0].capturado._8L = CCPR1L;
+"232
 [e = . . . *U + &U _receptores * -> -> -> 0 `i `ui `ux -> -> # *U &U _receptores `ui `ux 0 1 0 _CCPR1L ]
-[; ;pechera.c: 235: receptores[0].capturado._8H = CCPR1H;
-"235
+[; ;pechera.c: 233: receptores[0].capturado._8H = CCPR1H;
+"233
 [e = . . . *U + &U _receptores * -> -> -> 0 `i `ui `ux -> -> # *U &U _receptores `ui `ux 0 1 1 _CCPR1H ]
-[; ;pechera.c: 237: Capture(&receptores[0]);
-"237
+[; ;pechera.c: 235: Capture(&receptores[0]);
+"235
 [e ( _Capture (1 &U *U + &U _receptores * -> -> -> 0 `i `ui `ux -> -> # *U &U _receptores `ui `ux ]
-[; ;pechera.c: 239: PIR1bits.CCP1IF = 0;
-"239
+[; ;pechera.c: 237: PIR1bits.CCP1IF = 0;
+"237
 [e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
-"240
+"238
+}
+[e :U 884 ]
+[; ;pechera.c: 238: }
+[; ;pechera.c: 241: if(PIE2bits.CCP2IE && PIR2bits.CCP2IF)
+"241
+[e $ ! && != -> . . _PIE2bits 0 0 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR2bits 0 0 `i -> -> -> 0 `i `Vuc `i 885  ]
+[; ;pechera.c: 242: {
+"242
+{
+[; ;pechera.c: 243: TMR3L = 0;
+"243
+[e = _TMR3L -> -> 0 `i `uc ]
+[; ;pechera.c: 244: TMR3H = 0;
+"244
+[e = _TMR3H -> -> 0 `i `uc ]
+[; ;pechera.c: 247: receptores[1].capturado._8L = CCPR3L;
+"247
+[e = . . . *U + &U _receptores * -> -> -> 1 `i `ui `ux -> -> # *U &U _receptores `ui `ux 0 1 0 _CCPR3L ]
+[; ;pechera.c: 248: receptores[1].capturado._8H = CCPR3H;
+"248
+[e = . . . *U + &U _receptores * -> -> -> 1 `i `ui `ux -> -> # *U &U _receptores `ui `ux 0 1 1 _CCPR3H ]
+[; ;pechera.c: 250: Capture(&receptores[1]);
+"250
+[e ( _Capture (1 &U *U + &U _receptores * -> -> -> 1 `i `ui `ux -> -> # *U &U _receptores `ui `ux ]
+[; ;pechera.c: 252: PIR2bits.CCP2IF = 0;
+"252
+[e = . . _PIR2bits 0 0 -> -> 0 `i `uc ]
+"253
 }
 [e :U 885 ]
-[; ;pechera.c: 240: }
-[; ;pechera.c: 243: if(PIE2bits.CCP2IE && PIR2bits.CCP2IF)
-"243
-[e $ ! && != -> . . _PIE2bits 0 0 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR2bits 0 0 `i -> -> -> 0 `i `Vuc `i 886  ]
-[; ;pechera.c: 244: {
-"244
+[; ;pechera.c: 253: }
+[; ;pechera.c: 256: if(PIE4bits.CCP3IE && PIR4bits.CCP3IF)
+"256
+[e $ ! && != -> . . _PIE4bits 0 0 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR4bits 0 0 `i -> -> -> 0 `i `Vuc `i 886  ]
+[; ;pechera.c: 257: {
+"257
 {
-[; ;pechera.c: 245: TMR3L = 0;
-"245
-[e = _TMR3L -> -> 0 `i `uc ]
-[; ;pechera.c: 246: TMR3H = 0;
-"246
-[e = _TMR3H -> -> 0 `i `uc ]
-[; ;pechera.c: 249: receptores[1].capturado._8L = CCPR3L;
-"249
-[e = . . . *U + &U _receptores * -> -> -> 1 `i `ui `ux -> -> # *U &U _receptores `ui `ux 0 1 0 _CCPR3L ]
-[; ;pechera.c: 250: receptores[1].capturado._8H = CCPR3H;
-"250
-[e = . . . *U + &U _receptores * -> -> -> 1 `i `ui `ux -> -> # *U &U _receptores `ui `ux 0 1 1 _CCPR3H ]
-[; ;pechera.c: 252: Capture(&receptores[1]);
-"252
-[e ( _Capture (1 &U *U + &U _receptores * -> -> -> 1 `i `ui `ux -> -> # *U &U _receptores `ui `ux ]
-[; ;pechera.c: 254: PIR2bits.CCP2IF = 0;
-"254
-[e = . . _PIR2bits 0 0 -> -> 0 `i `uc ]
-"255
+[; ;pechera.c: 258: TMR5L = 0;
+"258
+[e = _TMR5L -> -> 0 `i `uc ]
+[; ;pechera.c: 259: TMR5H = 0;
+"259
+[e = _TMR5H -> -> 0 `i `uc ]
+[; ;pechera.c: 261: receptores[2].capturado._8L = CCPR5L;
+"261
+[e = . . . *U + &U _receptores * -> -> -> 2 `i `ui `ux -> -> # *U &U _receptores `ui `ux 0 1 0 _CCPR5L ]
+[; ;pechera.c: 262: receptores[2].capturado._8H = CCPR5H;
+"262
+[e = . . . *U + &U _receptores * -> -> -> 2 `i `ui `ux -> -> # *U &U _receptores `ui `ux 0 1 1 _CCPR5H ]
+[; ;pechera.c: 264: Capture(&receptores[2]);
+"264
+[e ( _Capture (1 &U *U + &U _receptores * -> -> -> 2 `i `ui `ux -> -> # *U &U _receptores `ui `ux ]
+[; ;pechera.c: 266: PIR4bits.CCP3IF = 0;
+"266
+[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+"267
 }
 [e :U 886 ]
-[; ;pechera.c: 255: }
-[; ;pechera.c: 258: if(PIE4bits.CCP3IE && PIR4bits.CCP3IF)
-"258
-[e $ ! && != -> . . _PIE4bits 0 0 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR4bits 0 0 `i -> -> -> 0 `i `Vuc `i 887  ]
-[; ;pechera.c: 259: {
-"259
-{
-[; ;pechera.c: 260: TMR5L = 0;
-"260
-[e = _TMR5L -> -> 0 `i `uc ]
-[; ;pechera.c: 261: TMR5H = 0;
-"261
-[e = _TMR5H -> -> 0 `i `uc ]
-[; ;pechera.c: 263: receptores[2].capturado._8L = CCPR5L;
-"263
-[e = . . . *U + &U _receptores * -> -> -> 2 `i `ui `ux -> -> # *U &U _receptores `ui `ux 0 1 0 _CCPR5L ]
-[; ;pechera.c: 264: receptores[2].capturado._8H = CCPR5H;
-"264
-[e = . . . *U + &U _receptores * -> -> -> 2 `i `ui `ux -> -> # *U &U _receptores `ui `ux 0 1 1 _CCPR5H ]
-[; ;pechera.c: 266: Capture(&receptores[2]);
-"266
-[e ( _Capture (1 &U *U + &U _receptores * -> -> -> 2 `i `ui `ux -> -> # *U &U _receptores `ui `ux ]
-[; ;pechera.c: 268: PIR4bits.CCP3IF = 0;
-"268
-[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+[; ;pechera.c: 267: }
+[; ;pechera.c: 269: if(INTCONbits.T0IE && INTCONbits.T0IF)
 "269
-}
-[e :U 887 ]
-[; ;pechera.c: 269: }
-[; ;pechera.c: 271: if(INTCONbits.T0IE && INTCONbits.T0IF)
-"271
-[e $ ! && != -> . . _INTCONbits 1 5 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCONbits 1 2 `i -> -> -> 0 `i `Vuc `i 888  ]
-[; ;pechera.c: 272: {
-"272
+[e $ ! && != -> . . _INTCONbits 1 5 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCONbits 1 2 `i -> -> -> 0 `i `Vuc `i 887  ]
+[; ;pechera.c: 270: {
+"270
 {
-[; ;pechera.c: 273: TMR0H = 99;
-"273
+[; ;pechera.c: 271: TMR0H = 99;
+"271
 [e = _TMR0H -> -> 99 `i `uc ]
-[; ;pechera.c: 274: TMR0L = 191;
-"274
+[; ;pechera.c: 272: TMR0L = 191;
+"272
 [e = _TMR0L -> -> 191 `i `uc ]
-[; ;pechera.c: 276: LA3 ^= 1;
-"276
+[; ;pechera.c: 274: LA3 ^= 1;
+"274
 [e =^ _LA3 -> -> 1 `i `b ]
-[; ;pechera.c: 277: if(jugador.estado == Vivo)
+[; ;pechera.c: 275: if(jugador.estado == Vivo)
+"275
+[e $ ! == -> . _jugador 0 `i -> . `E5853 0 `i 888  ]
+[; ;pechera.c: 276: {
+"276
+{
+[; ;pechera.c: 277: if(jugador.Arma.disparando)
 "277
-[e $ ! == -> . _jugador 0 `i -> . `E5853 0 `i 889  ]
+[e $ ! != -> . . _jugador 11 3 `i -> -> -> 0 `i `E5825 `i 889  ]
 [; ;pechera.c: 278: {
 "278
 {
-[; ;pechera.c: 279: if(jugador.Arma.disparando)
+[; ;pechera.c: 279: jugador.Arma.contDisparo++;
 "279
-[e $ ! != -> . . _jugador 11 3 `i -> -> -> 0 `i `E5825 `i 890  ]
-[; ;pechera.c: 280: {
-"280
-{
-[; ;pechera.c: 281: jugador.Arma.contDisparo++;
-"281
 [e ++ . . _jugador 11 2 -> -> 1 `i `uc ]
-[; ;pechera.c: 282: if(jugador.Arma.contDisparo == jugador.Arma.tDisparos)
-"282
-[e $ ! == -> . . _jugador 11 2 `i -> . . _jugador 11 1 `i 891  ]
-[; ;pechera.c: 283: {
-"283
+[; ;pechera.c: 280: if(jugador.Arma.contDisparo == jugador.Arma.tDisparos)
+"280
+[e $ ! == -> . . _jugador 11 2 `i -> . . _jugador 11 1 `i 890  ]
+[; ;pechera.c: 281: {
+"281
 {
-[; ;pechera.c: 284: jugador.Arma.contDisparo = 0;
-"284
+[; ;pechera.c: 282: jugador.Arma.contDisparo = 0;
+"282
 [e = . . _jugador 11 2 -> -> 0 `i `uc ]
-[; ;pechera.c: 285: jugador.Arma.habilDisparo = 1;
-"285
+[; ;pechera.c: 283: jugador.Arma.habilDisparo = 1;
+"283
 [e = . . _jugador 11 4 -> -> 1 `i `E5825 ]
-"286
-}
-[e :U 891 ]
-"287
+"284
 }
 [e :U 890 ]
-"288
+"285
 }
 [e :U 889 ]
-[; ;pechera.c: 286: }
-[; ;pechera.c: 287: }
-[; ;pechera.c: 288: }
-[; ;pechera.c: 290: debugCont++;
-"290
-[e ++ _debugCont -> -> 1 `i `uc ]
-[; ;pechera.c: 291: if(debugCont == 50)
-"291
-[e $ ! == -> _debugCont `i -> 50 `i 892  ]
-[; ;pechera.c: 292: {
-"292
-{
-[; ;pechera.c: 293: debugCont = 0;
-"293
-[e = _debugCont -> -> 0 `i `uc ]
-[; ;pechera.c: 300: debug.CantDatos = 3;
-"300
-[e = . _debug 2 -> -> 3 `i `uc ]
-[; ;pechera.c: 301: EUSARTEnviar2(&TXREG2, &debug);
-"301
-[e ( _EUSARTEnviar2 (2 , -> &U _TXREG2 `*uc &U _debug ]
-"302
-}
-[e :U 892 ]
-[; ;pechera.c: 302: }
-[; ;pechera.c: 304: INTCONbits.T0IF = 0;
-"304
-[e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
-"305
+"286
 }
 [e :U 888 ]
-[; ;pechera.c: 305: }
-[; ;pechera.c: 307: if(PIE1bits.SSP1IE && PIR1bits.SSP1IF)
+[; ;pechera.c: 284: }
+[; ;pechera.c: 285: }
+[; ;pechera.c: 286: }
+[; ;pechera.c: 288: debugCont++;
+"288
+[e ++ _debugCont -> -> 1 `i `uc ]
+[; ;pechera.c: 289: if(debugCont == 50)
+"289
+[e $ ! == -> _debugCont `i -> 50 `i 891  ]
+[; ;pechera.c: 290: {
+"290
+{
+[; ;pechera.c: 291: debugCont = 0;
+"291
+[e = _debugCont -> -> 0 `i `uc ]
+[; ;pechera.c: 298: debug.CantDatos = 3;
+"298
+[e = . _debug 2 -> -> 3 `i `uc ]
+[; ;pechera.c: 299: EUSARTEnviar2(&TXREG2, &debug);
+"299
+[e ( _EUSARTEnviar2 (2 , -> &U _TXREG2 `*uc &U _debug ]
+"300
+}
+[e :U 891 ]
+[; ;pechera.c: 300: }
+[; ;pechera.c: 302: INTCONbits.T0IF = 0;
+"302
+[e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
+"303
+}
+[e :U 887 ]
+[; ;pechera.c: 303: }
+[; ;pechera.c: 306: if(PIE3bits.TX2IE && PIR3bits.TX2IF)
+"306
+[e $ ! && != -> . . _PIE3bits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR3bits 0 4 `i -> -> -> 0 `i `Vuc `i 892  ]
+[; ;pechera.c: 307: {
 "307
-[e $ ! && != -> . . _PIE1bits 0 3 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 893  ]
-[; ;pechera.c: 308: {
+{
+[; ;pechera.c: 308: if(debug.CantDatos > debug.cont)
 "308
-{
-[; ;pechera.c: 309: if(rfid.contDatos < rfid.cantDatos)
+[e $ ! > -> . _debug 2 `i -> . _debug 1 `i 893  ]
+[; ;pechera.c: 309: {
 "309
-[e $ ! < -> . _rfid 1 `i -> . _rfid 2 `i 894  ]
-[; ;pechera.c: 310: {
-"310
 {
+[; ;pechera.c: 310: TXREG2 = debug.Datos[debug.cont];
+"310
+[e = _TXREG2 *U + &U . _debug 0 * -> . _debug 1 `ux -> -> # *U &U . _debug 0 `ui `ux ]
+[; ;pechera.c: 311: debug.cont++;
 "311
-[v _aux `uc ~T0 @X0 1 a ]
-[; ;pechera.c: 311: char aux = rfid.Datos[rfid.contDatos];
-[e = _aux *U + &U . _rfid 0 * -> . _rfid 1 `ux -> -> # *U &U . _rfid 0 `ui `ux ]
-[; ;pechera.c: 312: rfid.Datos[rfid.contDatos] = SSP1BUF;
+[e ++ . _debug 1 -> -> 1 `i `uc ]
 "312
-[e = *U + &U . _rfid 0 * -> . _rfid 1 `ux -> -> # *U &U . _rfid 0 `ui `ux _SSP1BUF ]
-[; ;pechera.c: 313: SSP1BUF = aux;
+}
+[; ;pechera.c: 312: }
+[e $U 894  ]
 "313
-[e = _SSP1BUF _aux ]
-[; ;pechera.c: 314: rfid.contDatos++;
+[e :U 893 ]
+[; ;pechera.c: 313: else
+[; ;pechera.c: 314: {
 "314
-[e ++ . _rfid 1 -> -> 1 `i `uc ]
-[; ;pechera.c: 315: debug.Datos[0] = rfid.contDatos;
+{
+[; ;pechera.c: 315: debug.cont = 0;
 "315
-[e = *U + &U . _debug 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux . _rfid 1 ]
-[; ;pechera.c: 316: debug.Datos[1] = rfid.cantDatos;
+[e = . _debug 1 -> -> 0 `i `uc ]
+[; ;pechera.c: 316: debug.Transmitiendo = 0;
 "316
-[e = *U + &U . _debug 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux . _rfid 2 ]
-[; ;pechera.c: 317: LC0^=1;
+[e = . _debug 3 -> -> 0 `i `E5825 ]
+[; ;pechera.c: 317: PIE3bits.TX2IE = 0;
 "317
-[e =^ _LC0 -> -> 1 `i `b ]
+[e = . . _PIE3bits 0 4 -> -> 0 `i `uc ]
 "318
 }
-[; ;pechera.c: 318: }
-[e $U 895  ]
-"319
 [e :U 894 ]
-[; ;pechera.c: 319: else
-[; ;pechera.c: 320: {
+"319
+}
+[e :U 892 ]
+[; ;pechera.c: 318: }
+[; ;pechera.c: 319: }
+[; ;pechera.c: 320: }
 "320
-{
-[; ;pechera.c: 321: rfid.contDatos = 0;
-"321
-[e = . _rfid 1 -> -> 0 `i `uc ]
+[e :UE 883 ]
+}
 "322
-}
-[e :U 895 ]
-[; ;pechera.c: 322: }
-[; ;pechera.c: 324: PIR1bits.SSP1IF = 0;
-"324
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"325
-}
-[e :U 893 ]
-[; ;pechera.c: 325: }
-[; ;pechera.c: 327: if(PIE3bits.TX2IE && PIR3bits.TX2IF)
-"327
-[e $ ! && != -> . . _PIE3bits 0 4 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR3bits 0 4 `i -> -> -> 0 `i `Vuc `i 896  ]
-[; ;pechera.c: 328: {
-"328
-{
-[; ;pechera.c: 329: if(debug.CantDatos > debug.cont)
-"329
-[e $ ! > -> . _debug 2 `i -> . _debug 1 `i 897  ]
-[; ;pechera.c: 330: {
-"330
-{
-[; ;pechera.c: 331: TXREG2 = debug.Datos[debug.cont];
-"331
-[e = _TXREG2 *U + &U . _debug 0 * -> . _debug 1 `ux -> -> # *U &U . _debug 0 `ui `ux ]
-[; ;pechera.c: 332: debug.cont++;
-"332
-[e ++ . _debug 1 -> -> 1 `i `uc ]
-"333
-}
-[; ;pechera.c: 333: }
-[e $U 898  ]
-"334
-[e :U 897 ]
-[; ;pechera.c: 334: else
-[; ;pechera.c: 335: {
-"335
-{
-[; ;pechera.c: 336: debug.cont = 0;
-"336
-[e = . _debug 1 -> -> 0 `i `uc ]
-[; ;pechera.c: 337: debug.Transmitiendo = 0;
-"337
-[e = . _debug 3 -> -> 0 `i `E5825 ]
-[; ;pechera.c: 338: PIE3bits.TX2IE = 0;
-"338
-[e = . . _PIE3bits 0 4 -> -> 0 `i `uc ]
-"339
-}
-[e :U 898 ]
-"340
-}
-[e :U 896 ]
-[; ;pechera.c: 339: }
-[; ;pechera.c: 340: }
-[; ;pechera.c: 341: }
-"341
-[e :UE 884 ]
-}
-"343
 [v _InitDebug `(v ~T0 @X0 1 ef ]
-"344
+"323
 {
-[; ;pechera.c: 343: void InitDebug()
-[; ;pechera.c: 344: {
+[; ;pechera.c: 322: void InitDebug()
+[; ;pechera.c: 323: {
 [e :U _InitDebug ]
 [f ]
-[; ;pechera.c: 345: configJuego.Estado = Inicializacion;
-"345
+[; ;pechera.c: 324: configJuego.Estado = Inicializacion;
+"324
 [e = . _configJuego 5 . `E5829 0 ]
-[; ;pechera.c: 346: configJuego.FriendlyFire = 0;
-"346
+[; ;pechera.c: 325: configJuego.FriendlyFire = 0;
+"325
 [e = . _configJuego 4 -> -> 0 `i `E5825 ]
-[; ;pechera.c: 347: configJuego.RestaKillEquipo = 3;
-"347
+[; ;pechera.c: 326: configJuego.RestaKillEquipo = 3;
+"326
 [e = . _configJuego 3 -> -> 3 `i `uc ]
-[; ;pechera.c: 348: configJuego.RestaMuerte = 6;
-"348
+[; ;pechera.c: 327: configJuego.RestaMuerte = 6;
+"327
 [e = . _configJuego 1 -> -> 6 `i `uc ]
-[; ;pechera.c: 349: configJuego.SumaAsesinato = 5;
-"349
+[; ;pechera.c: 328: configJuego.SumaAsesinato = 5;
+"328
 [e = . _configJuego 0 -> -> 5 `i `uc ]
-[; ;pechera.c: 350: configJuego.SumaAsistencia = 1;
-"350
+[; ;pechera.c: 329: configJuego.SumaAsistencia = 1;
+"329
 [e = . _configJuego 2 -> -> 1 `i `uc ]
-[; ;pechera.c: 352: jugador.estado = Revivir;
-"352
+[; ;pechera.c: 331: jugador.estado = Revivir;
+"331
 [e = . _jugador 0 . `E5853 2 ]
-[; ;pechera.c: 353: jugador.equipo = Verde;
-"353
+[; ;pechera.c: 332: jugador.equipo = Verde;
+"332
 [e = . _jugador 1 . `E5859 2 ]
-[; ;pechera.c: 354: jugador.ID = 101;
-"354
+[; ;pechera.c: 333: jugador.ID = 101;
+"333
 [e = . _jugador 2 -> -> 101 `i `uc ]
-[; ;pechera.c: 355: jugador.Vida = 100;
-"355
+[; ;pechera.c: 334: jugador.Vida = 100;
+"334
 [e = . _jugador 3 -> -> 100 `i `uc ]
-[; ;pechera.c: 356: jugador.Balas = 20;
-"356
+[; ;pechera.c: 335: jugador.Balas = 20;
+"335
 [e = . _jugador 4 -> -> 20 `i `uc ]
-[; ;pechera.c: 357: jugador.BalasMax = 20;
-"357
+[; ;pechera.c: 336: jugador.BalasMax = 20;
+"336
 [e = . _jugador 5 -> -> 20 `i `uc ]
-[; ;pechera.c: 358: jugador.Cargadores = 1;
-"358
+[; ;pechera.c: 337: jugador.Cargadores = 1;
+"337
 [e = . _jugador 6 -> -> 1 `i `uc ]
-[; ;pechera.c: 359: jugador.CargadoresMax = 5;
-"359
+[; ;pechera.c: 338: jugador.CargadoresMax = 5;
+"338
 [e = . _jugador 7 -> -> 5 `i `uc ]
-[; ;pechera.c: 360: for(char i = 0; i < 10; i++)
-"360
+[; ;pechera.c: 339: for(char i = 0; i < 10; i++)
+"339
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 900  ]
-[e $U 901  ]
-"361
-[e :U 900 ]
-[; ;pechera.c: 361: jugador.IDHitters[i] = 0;
+[e $ < -> _i `i -> 10 `i 896  ]
+[e $U 897  ]
+"340
+[e :U 896 ]
+[; ;pechera.c: 340: jugador.IDHitters[i] = 0;
 [e = *U + &U . . _jugador 10 0 * -> _i `ux -> -> # *U &U . . _jugador 10 0 `ui `ux -> -> 0 `i `uc ]
-"360
+"339
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 900  ]
-[e :U 901 ]
-"361
+[e $ < -> _i `i -> 10 `i 896  ]
+[e :U 897 ]
+"340
 }
-[; ;pechera.c: 362: jugador.contAssits = 0;
-"362
+[; ;pechera.c: 341: jugador.contAssits = 0;
+"341
 [e = . _jugador 8 -> -> 0 `i `uc ]
-[; ;pechera.c: 363: jugador.IDKiller = 0;
-"363
+[; ;pechera.c: 342: jugador.IDKiller = 0;
+"342
 [e = . _jugador 9 -> -> 0 `i `uc ]
-[; ;pechera.c: 365: jugador.Arma.damage = 15;
-"365
+[; ;pechera.c: 344: jugador.Arma.damage = 15;
+"344
 [e = . . _jugador 11 0 -> -> 15 `i `uc ]
-[; ;pechera.c: 366: jugador.Arma.tDisparos = 50;
-"366
+[; ;pechera.c: 345: jugador.Arma.tDisparos = 50;
+"345
 [e = . . _jugador 11 1 -> -> 50 `i `uc ]
-[; ;pechera.c: 367: jugador.Arma.contDisparo = 0;
-"367
+[; ;pechera.c: 346: jugador.Arma.contDisparo = 0;
+"346
 [e = . . _jugador 11 2 -> -> 0 `i `uc ]
-[; ;pechera.c: 368: jugador.Arma.disparando = 0;
-"368
+[; ;pechera.c: 347: jugador.Arma.disparando = 0;
+"347
 [e = . . _jugador 11 3 -> -> 0 `i `E5825 ]
-[; ;pechera.c: 369: jugador.Arma.habilDisparo = 0;
-"369
+[; ;pechera.c: 348: jugador.Arma.habilDisparo = 0;
+"348
 [e = . . _jugador 11 4 -> -> 0 `i `E5825 ]
-[; ;pechera.c: 371: jugador.Estadisticas.puntos = 0;
-"371
+[; ;pechera.c: 350: jugador.Estadisticas.puntos = 0;
+"350
 [e = . . . _jugador 12 4 0 -> 0 `i ]
-[; ;pechera.c: 372: jugador.Estadisticas.Kills = 0;
-"372
+[; ;pechera.c: 351: jugador.Estadisticas.Kills = 0;
+"351
 [e = . . _jugador 12 0 -> -> 0 `i `uc ]
-[; ;pechera.c: 373: jugador.Estadisticas.Deaths = 0;
-"373
+[; ;pechera.c: 352: jugador.Estadisticas.Deaths = 0;
+"352
 [e = . . _jugador 12 1 -> -> 0 `i `uc ]
-[; ;pechera.c: 374: jugador.Estadisticas.Assists = 0;
-"374
+[; ;pechera.c: 353: jugador.Estadisticas.Assists = 0;
+"353
 [e = . . _jugador 12 2 -> -> 0 `i `uc ]
-[; ;pechera.c: 375: jugador.Estadisticas.Punteria = 0;
-"375
+[; ;pechera.c: 354: jugador.Estadisticas.Punteria = 0;
+"354
 [e = . . _jugador 12 3 -> -> 0 `i `uc ]
-[; ;pechera.c: 377: for(char i = 0; i < 3; i++)
-"377
+[; ;pechera.c: 356: for(char i = 0; i < 3; i++)
+"356
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 3 `i 903  ]
-[e $U 904  ]
-"378
-[e :U 903 ]
-[; ;pechera.c: 378: {
+[e $ < -> _i `i -> 3 `i 899  ]
+[e $U 900  ]
+"357
+[e :U 899 ]
+[; ;pechera.c: 357: {
 {
-[; ;pechera.c: 379: receptores[i].esperandoInicioRL = 1;
-"379
+[; ;pechera.c: 358: receptores[i].esperandoInicioRL = 1;
+"358
 [e = . *U + &U _receptores * -> _i `ux -> -> # *U &U _receptores `ui `ux 1 -> -> 1 `i `uc ]
-[; ;pechera.c: 380: receptores[i].DatoLaser = 0;
-"380
+[; ;pechera.c: 359: receptores[i].DatoLaser = 0;
+"359
 [e = . *U + &U _receptores * -> _i `ux -> -> # *U &U _receptores `ui `ux 2 -> -> 0 `i `uc ]
-[; ;pechera.c: 381: receptores[i].contDatosRecL = 0;
-"381
+[; ;pechera.c: 360: receptores[i].contDatosRecL = 0;
+"360
 [e = . *U + &U _receptores * -> _i `ux -> -> # *U &U _receptores `ui `ux 4 -> -> 0 `i `c ]
-[; ;pechera.c: 382: receptores[i].cantDatosRecL = 0;
-"382
+[; ;pechera.c: 361: receptores[i].cantDatosRecL = 0;
+"361
 [e = . *U + &U _receptores * -> _i `ux -> -> # *U &U _receptores `ui `ux 5 -> -> 0 `i `uc ]
-[; ;pechera.c: 383: receptores[i].nBitR = 0;
-"383
+[; ;pechera.c: 362: receptores[i].nBitR = 0;
+"362
 [e = . *U + &U _receptores * -> _i `ux -> -> # *U &U _receptores `ui `ux 6 -> -> 0 `i `uc ]
-[; ;pechera.c: 384: receptores[i].DatosLRecibidoFlag = 0;
-"384
+[; ;pechera.c: 363: receptores[i].DatosLRecibidoFlag = 0;
+"363
 [e = . *U + &U _receptores * -> _i `ux -> -> # *U &U _receptores `ui `ux 7 -> -> 0 `i `E5825 ]
-"385
+"364
 }
-"377
+"356
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 3 `i 903  ]
-[e :U 904 ]
-"385
+[e $ < -> _i `i -> 3 `i 899  ]
+[e :U 900 ]
+"364
 }
-[; ;pechera.c: 385: }
-[; ;pechera.c: 387: debug.Transmitiendo = 0;
-"387
+[; ;pechera.c: 364: }
+[; ;pechera.c: 366: debug.Transmitiendo = 0;
+"366
 [e = . _debug 3 -> -> 0 `i `E5825 ]
-[; ;pechera.c: 388: debug.CantDatos = 1;
-"388
+[; ;pechera.c: 367: debug.CantDatos = 1;
+"367
 [e = . _debug 2 -> -> 1 `i `uc ]
-[; ;pechera.c: 389: debug.cont = 0;
-"389
+[; ;pechera.c: 368: debug.cont = 0;
+"368
 [e = . _debug 1 -> -> 0 `i `uc ]
-[; ;pechera.c: 390: debug.Datos[0] = 0;
-"390
+[; ;pechera.c: 369: debug.Datos[0] = 0;
+"369
 [e = *U + &U . _debug 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 0 `i `uc ]
-[; ;pechera.c: 391: }
-"391
-[e :UE 899 ]
+[; ;pechera.c: 370: }
+"370
+[e :UE 895 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"393
+"372
 [v _main `(v ~T0 @X0 1 ef ]
-"394
+"373
 {
-[; ;pechera.c: 393: void main(void)
-[; ;pechera.c: 394: {
+[; ;pechera.c: 372: void main(void)
+[; ;pechera.c: 373: {
 [e :U _main ]
 [f ]
-[; ;pechera.c: 395: Config();
-"395
+[; ;pechera.c: 374: Config();
+"374
 [e ( _Config ..  ]
-[; ;pechera.c: 396: RFIDInit(&rfid);
-"396
-[e ( _RFIDInit (1 &U _rfid ]
-[; ;pechera.c: 397: InitDebug();
-"397
+[; ;pechera.c: 375: InitDebug();
+"375
 [e ( _InitDebug ..  ]
-[; ;pechera.c: 399: configJuego.Estado = EnJuego;
-"399
+[; ;pechera.c: 377: configJuego.Estado = EnJuego;
+"377
 [e = . _configJuego 5 . `E5829 6 ]
-[; ;pechera.c: 402: while(1)
-"402
-[e :U 908 ]
-[; ;pechera.c: 403: {
-"403
+[; ;pechera.c: 380: while(1)
+"380
+[e :U 904 ]
+[; ;pechera.c: 381: {
+"381
 {
-[; ;pechera.c: 404: if(configJuego.Estado == EnJuego)
-"404
-[e $ ! == -> . _configJuego 5 `i -> . `E5829 6 `i 910  ]
-[; ;pechera.c: 405: {
-"405
+[; ;pechera.c: 382: if(configJuego.Estado == EnJuego)
+"382
+[e $ ! == -> . _configJuego 5 `i -> . `E5829 6 `i 906  ]
+[; ;pechera.c: 383: {
+"383
 {
-[; ;pechera.c: 406: if(jugador.estado == Revivir)
-"406
-[e $ ! == -> . _jugador 0 `i -> . `E5853 2 `i 911  ]
-[; ;pechera.c: 407: {
-"407
+[; ;pechera.c: 384: if(jugador.estado == Revivir)
+"384
+[e $ ! == -> . _jugador 0 `i -> . `E5853 2 `i 907  ]
+[; ;pechera.c: 385: {
+"385
 {
-[; ;pechera.c: 408: DatosEL[0] = 3;
-"408
+[; ;pechera.c: 386: DatosEL[0] = 3;
+"386
 [e = *U + &U _DatosEL * -> -> -> 0 `i `ui `ux -> -> # *U &U _DatosEL `ui `ux -> -> 3 `i `uc ]
-[; ;pechera.c: 409: DatosEL[1] = jugador.ID;
-"409
+[; ;pechera.c: 387: DatosEL[1] = jugador.ID;
+"387
 [e = *U + &U _DatosEL * -> -> -> 1 `i `ui `ux -> -> # *U &U _DatosEL `ui `ux . _jugador 2 ]
-[; ;pechera.c: 410: DatosEL[2] = jugador.equipo;
-"410
+[; ;pechera.c: 388: DatosEL[2] = jugador.equipo;
+"388
 [e = *U + &U _DatosEL * -> -> -> 2 `i `ui `ux -> -> # *U &U _DatosEL `ui `ux -> . _jugador 1 `uc ]
-[; ;pechera.c: 411: DatosEL[3] = jugador.Arma.damage;
-"411
+[; ;pechera.c: 389: DatosEL[3] = jugador.Arma.damage;
+"389
 [e = *U + &U _DatosEL * -> -> -> 3 `i `ui `ux -> -> # *U &U _DatosEL `ui `ux . . _jugador 11 0 ]
-[; ;pechera.c: 413: cantBytesEL = 4;
-"413
+[; ;pechera.c: 391: cantBytesEL = 4;
+"391
 [e = _cantBytesEL -> -> 4 `i `uc ]
-[; ;pechera.c: 414: jugador.estado = Vivo;
-"414
+[; ;pechera.c: 392: jugador.estado = Vivo;
+"392
 [e = . _jugador 0 . `E5853 0 ]
+"393
+}
+[; ;pechera.c: 393: }
+[e $U 908  ]
+"394
+[e :U 907 ]
+[; ;pechera.c: 394: else if(jugador.estado == Vivo)
+[e $ ! == -> . _jugador 0 `i -> . `E5853 0 `i 909  ]
+[; ;pechera.c: 395: {
+"395
+{
+[; ;pechera.c: 397: if(PORTBbits.RB0 && !jugador.Arma.disparando)
+"397
+[e $ ! && != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i ! != -> . . _jugador 11 3 `i -> -> -> 0 `i `E5825 `i 910  ]
+[; ;pechera.c: 398: {
+"398
+{
+[; ;pechera.c: 399: TMR4 = 0;
+"399
+[e = _TMR4 -> -> 0 `i `uc ]
+[; ;pechera.c: 400: PR4 = 20;
+"400
+[e = _PR4 -> -> 20 `i `uc ]
+[; ;pechera.c: 401: T4CONbits.T4OUTPS = 10;
+"401
+[e = . . _T4CONbits 0 2 -> -> 10 `i `uc ]
+[; ;pechera.c: 402: T4CONbits.T4CKPS = 0;
+"402
+[e = . . _T4CONbits 0 0 -> -> 0 `i `uc ]
+[; ;pechera.c: 403: T4CONbits.TMR4ON = 1;
+"403
+[e = . . _T4CONbits 0 1 -> -> 1 `i `uc ]
+[; ;pechera.c: 404: PIE5bits.TMR4IE = 1;
+"404
+[e = . . _PIE5bits 0 0 -> -> 1 `i `uc ]
+[; ;pechera.c: 406: jugador.Arma.disparando = 1;
+"406
+[e = . . _jugador 11 3 -> -> 1 `i `E5825 ]
 "415
 }
 [; ;pechera.c: 415: }
-[e $U 912  ]
+[e $U 911  ]
 "416
-[e :U 911 ]
-[; ;pechera.c: 416: else if(jugador.estado == Vivo)
-[e $ ! == -> . _jugador 0 `i -> . `E5853 0 `i 913  ]
+[e :U 910 ]
+[; ;pechera.c: 416: else if(!PORTBbits.RB0 && jugador.Arma.habilDisparo)
+[e $ ! && ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i != -> . . _jugador 11 4 `i -> -> -> 0 `i `E5825 `i 912  ]
 [; ;pechera.c: 417: {
 "417
 {
-[; ;pechera.c: 419: if(PORTBbits.RB0 && !jugador.Arma.disparando)
-"419
-[e $ ! && != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i ! != -> . . _jugador 11 3 `i -> -> -> 0 `i `E5825 `i 914  ]
-[; ;pechera.c: 420: {
-"420
-{
-[; ;pechera.c: 421: TMR4 = 0;
-"421
-[e = _TMR4 -> -> 0 `i `uc ]
-[; ;pechera.c: 422: PR4 = 20;
-"422
-[e = _PR4 -> -> 20 `i `uc ]
-[; ;pechera.c: 423: T4CONbits.T4OUTPS = 10;
-"423
-[e = . . _T4CONbits 0 2 -> -> 10 `i `uc ]
-[; ;pechera.c: 424: T4CONbits.T4CKPS = 0;
-"424
-[e = . . _T4CONbits 0 0 -> -> 0 `i `uc ]
-[; ;pechera.c: 425: T4CONbits.TMR4ON = 1;
-"425
-[e = . . _T4CONbits 0 1 -> -> 1 `i `uc ]
-[; ;pechera.c: 426: PIE5bits.TMR4IE = 1;
-"426
-[e = . . _PIE5bits 0 0 -> -> 1 `i `uc ]
-[; ;pechera.c: 428: jugador.Arma.disparando = 1;
-"428
-[e = . . _jugador 11 3 -> -> 1 `i `E5825 ]
-"437
-}
-[; ;pechera.c: 437: }
-[e $U 915  ]
-"438
-[e :U 914 ]
-[; ;pechera.c: 438: else if(!PORTBbits.RB0 && jugador.Arma.habilDisparo)
-[e $ ! && ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i != -> . . _jugador 11 4 `i -> -> -> 0 `i `E5825 `i 916  ]
-[; ;pechera.c: 439: {
-"439
-{
-[; ;pechera.c: 440: jugador.Arma.habilDisparo = 0;
-"440
+[; ;pechera.c: 418: jugador.Arma.habilDisparo = 0;
+"418
 [e = . . _jugador 11 4 -> -> 0 `i `E5825 ]
-[; ;pechera.c: 441: jugador.Arma.disparando = 0;
-"441
+[; ;pechera.c: 419: jugador.Arma.disparando = 0;
+"419
 [e = . . _jugador 11 3 -> -> 0 `i `E5825 ]
-"442
+"420
 }
-[e :U 916 ]
-"444
-[e :U 915 ]
-[; ;pechera.c: 442: }
-[; ;pechera.c: 444: if(receptores[0].DatosLRecibidoFlag)
-[e $ ! != -> . *U + &U _receptores * -> -> -> 0 `i `ui `ux -> -> # *U &U _receptores `ui `ux 7 `i -> -> -> 0 `i `E5825 `i 917  ]
-[; ;pechera.c: 445: {
-"445
+[e :U 912 ]
+"422
+[e :U 911 ]
+[; ;pechera.c: 420: }
+[; ;pechera.c: 422: if(receptores[0].DatosLRecibidoFlag)
+[e $ ! != -> . *U + &U _receptores * -> -> -> 0 `i `ui `ux -> -> # *U &U _receptores `ui `ux 7 `i -> -> -> 0 `i `E5825 `i 913  ]
+[; ;pechera.c: 423: {
+"423
 {
-[; ;pechera.c: 446: ReadShot(&configJuego, &jugador, &receptores[0]);
-"446
+[; ;pechera.c: 424: ReadShot(&configJuego, &jugador, &receptores[0]);
+"424
 [e ( _ReadShot (3 , , &U _configJuego &U _jugador &U *U + &U _receptores * -> -> -> 0 `i `ui `ux -> -> # *U &U _receptores `ui `ux ]
-[; ;pechera.c: 448: receptores[0].DatosLRecibidoFlag = 0;
-"448
+[; ;pechera.c: 426: receptores[0].DatosLRecibidoFlag = 0;
+"426
 [e = . *U + &U _receptores * -> -> -> 0 `i `ui `ux -> -> # *U &U _receptores `ui `ux 7 -> -> 0 `i `E5825 ]
-[; ;pechera.c: 451: debug.Datos[0] = 'R';
-"451
+[; ;pechera.c: 429: debug.Datos[0] = 'R';
+"429
 [e = *U + &U . _debug 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 82 `ui `uc ]
-[; ;pechera.c: 452: debug.Datos[1] = 'e';
-"452
+[; ;pechera.c: 430: debug.Datos[1] = 'e';
+"430
 [e = *U + &U . _debug 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 101 `ui `uc ]
-[; ;pechera.c: 453: debug.Datos[2] = 'c';
-"453
+[; ;pechera.c: 431: debug.Datos[2] = 'c';
+"431
 [e = *U + &U . _debug 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 99 `ui `uc ]
-[; ;pechera.c: 454: debug.Datos[3] = '1';
-"454
+[; ;pechera.c: 432: debug.Datos[3] = '1';
+"432
 [e = *U + &U . _debug 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 49 `ui `uc ]
-[; ;pechera.c: 455: debug.CantDatos = 4;
-"455
+[; ;pechera.c: 433: debug.CantDatos = 4;
+"433
 [e = . _debug 2 -> -> 4 `i `uc ]
-[; ;pechera.c: 456: EUSARTEnviar2(&TXREG2, &debug);
-"456
+[; ;pechera.c: 434: EUSARTEnviar2(&TXREG2, &debug);
+"434
 [e ( _EUSARTEnviar2 (2 , -> &U _TXREG2 `*uc &U _debug ]
-"457
-}
-[e :U 917 ]
-[; ;pechera.c: 457: }
-[; ;pechera.c: 459: if(receptores[1].DatosLRecibidoFlag)
-"459
-[e $ ! != -> . *U + &U _receptores * -> -> -> 1 `i `ui `ux -> -> # *U &U _receptores `ui `ux 7 `i -> -> -> 0 `i `E5825 `i 918  ]
-[; ;pechera.c: 460: {
-"460
-{
-[; ;pechera.c: 461: ReadShot(&configJuego, &jugador, &receptores[1]);
-"461
-[e ( _ReadShot (3 , , &U _configJuego &U _jugador &U *U + &U _receptores * -> -> -> 1 `i `ui `ux -> -> # *U &U _receptores `ui `ux ]
-[; ;pechera.c: 463: receptores[1].DatosLRecibidoFlag = 0;
-"463
-[e = . *U + &U _receptores * -> -> -> 1 `i `ui `ux -> -> # *U &U _receptores `ui `ux 7 -> -> 0 `i `E5825 ]
-[; ;pechera.c: 466: debug.Datos[0] = 'R';
-"466
-[e = *U + &U . _debug 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 82 `ui `uc ]
-[; ;pechera.c: 467: debug.Datos[1] = 'e';
-"467
-[e = *U + &U . _debug 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 101 `ui `uc ]
-[; ;pechera.c: 468: debug.Datos[2] = 'c';
-"468
-[e = *U + &U . _debug 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 99 `ui `uc ]
-[; ;pechera.c: 469: debug.Datos[3] = '2';
-"469
-[e = *U + &U . _debug 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 50 `ui `uc ]
-[; ;pechera.c: 470: debug.CantDatos = 4;
-"470
-[e = . _debug 2 -> -> 4 `i `uc ]
-[; ;pechera.c: 471: EUSARTEnviar2(&TXREG2, &debug);
-"471
-[e ( _EUSARTEnviar2 (2 , -> &U _TXREG2 `*uc &U _debug ]
-"472
-}
-[e :U 918 ]
-[; ;pechera.c: 472: }
-[; ;pechera.c: 474: if(receptores[2].DatosLRecibidoFlag)
-"474
-[e $ ! != -> . *U + &U _receptores * -> -> -> 2 `i `ui `ux -> -> # *U &U _receptores `ui `ux 7 `i -> -> -> 0 `i `E5825 `i 919  ]
-[; ;pechera.c: 475: {
-"475
-{
-[; ;pechera.c: 476: ReadShot(&configJuego, &jugador, &receptores[2]);
-"476
-[e ( _ReadShot (3 , , &U _configJuego &U _jugador &U *U + &U _receptores * -> -> -> 2 `i `ui `ux -> -> # *U &U _receptores `ui `ux ]
-[; ;pechera.c: 478: receptores[2].DatosLRecibidoFlag = 0;
-"478
-[e = . *U + &U _receptores * -> -> -> 2 `i `ui `ux -> -> # *U &U _receptores `ui `ux 7 -> -> 0 `i `E5825 ]
-[; ;pechera.c: 481: debug.Datos[0] = 'R';
-"481
-[e = *U + &U . _debug 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 82 `ui `uc ]
-[; ;pechera.c: 482: debug.Datos[1] = 'e';
-"482
-[e = *U + &U . _debug 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 101 `ui `uc ]
-[; ;pechera.c: 483: debug.Datos[2] = 'c';
-"483
-[e = *U + &U . _debug 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 99 `ui `uc ]
-[; ;pechera.c: 484: debug.Datos[3] = '3';
-"484
-[e = *U + &U . _debug 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 51 `ui `uc ]
-[; ;pechera.c: 485: debug.CantDatos = 4;
-"485
-[e = . _debug 2 -> -> 4 `i `uc ]
-[; ;pechera.c: 486: EUSARTEnviar2(&TXREG2, &debug);
-"486
-[e ( _EUSARTEnviar2 (2 , -> &U _TXREG2 `*uc &U _debug ]
-"487
-}
-[e :U 919 ]
-"488
+"435
 }
 [e :U 913 ]
-"489
-[e :U 912 ]
+[; ;pechera.c: 435: }
+[; ;pechera.c: 437: if(receptores[1].DatosLRecibidoFlag)
+"437
+[e $ ! != -> . *U + &U _receptores * -> -> -> 1 `i `ui `ux -> -> # *U &U _receptores `ui `ux 7 `i -> -> -> 0 `i `E5825 `i 914  ]
+[; ;pechera.c: 438: {
+"438
+{
+[; ;pechera.c: 439: ReadShot(&configJuego, &jugador, &receptores[1]);
+"439
+[e ( _ReadShot (3 , , &U _configJuego &U _jugador &U *U + &U _receptores * -> -> -> 1 `i `ui `ux -> -> # *U &U _receptores `ui `ux ]
+[; ;pechera.c: 441: receptores[1].DatosLRecibidoFlag = 0;
+"441
+[e = . *U + &U _receptores * -> -> -> 1 `i `ui `ux -> -> # *U &U _receptores `ui `ux 7 -> -> 0 `i `E5825 ]
+[; ;pechera.c: 444: debug.Datos[0] = 'R';
+"444
+[e = *U + &U . _debug 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 82 `ui `uc ]
+[; ;pechera.c: 445: debug.Datos[1] = 'e';
+"445
+[e = *U + &U . _debug 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 101 `ui `uc ]
+[; ;pechera.c: 446: debug.Datos[2] = 'c';
+"446
+[e = *U + &U . _debug 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 99 `ui `uc ]
+[; ;pechera.c: 447: debug.Datos[3] = '2';
+"447
+[e = *U + &U . _debug 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 50 `ui `uc ]
+[; ;pechera.c: 448: debug.CantDatos = 4;
+"448
+[e = . _debug 2 -> -> 4 `i `uc ]
+[; ;pechera.c: 449: EUSARTEnviar2(&TXREG2, &debug);
+"449
+[e ( _EUSARTEnviar2 (2 , -> &U _TXREG2 `*uc &U _debug ]
+"450
 }
-[e :U 910 ]
-"490
+[e :U 914 ]
+[; ;pechera.c: 450: }
+[; ;pechera.c: 452: if(receptores[2].DatosLRecibidoFlag)
+"452
+[e $ ! != -> . *U + &U _receptores * -> -> -> 2 `i `ui `ux -> -> # *U &U _receptores `ui `ux 7 `i -> -> -> 0 `i `E5825 `i 915  ]
+[; ;pechera.c: 453: {
+"453
+{
+[; ;pechera.c: 454: ReadShot(&configJuego, &jugador, &receptores[2]);
+"454
+[e ( _ReadShot (3 , , &U _configJuego &U _jugador &U *U + &U _receptores * -> -> -> 2 `i `ui `ux -> -> # *U &U _receptores `ui `ux ]
+[; ;pechera.c: 456: receptores[2].DatosLRecibidoFlag = 0;
+"456
+[e = . *U + &U _receptores * -> -> -> 2 `i `ui `ux -> -> # *U &U _receptores `ui `ux 7 -> -> 0 `i `E5825 ]
+[; ;pechera.c: 459: debug.Datos[0] = 'R';
+"459
+[e = *U + &U . _debug 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 82 `ui `uc ]
+[; ;pechera.c: 460: debug.Datos[1] = 'e';
+"460
+[e = *U + &U . _debug 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 101 `ui `uc ]
+[; ;pechera.c: 461: debug.Datos[2] = 'c';
+"461
+[e = *U + &U . _debug 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 99 `ui `uc ]
+[; ;pechera.c: 462: debug.Datos[3] = '3';
+"462
+[e = *U + &U . _debug 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _debug 0 `ui `ux -> -> 51 `ui `uc ]
+[; ;pechera.c: 463: debug.CantDatos = 4;
+"463
+[e = . _debug 2 -> -> 4 `i `uc ]
+[; ;pechera.c: 464: EUSARTEnviar2(&TXREG2, &debug);
+"464
+[e ( _EUSARTEnviar2 (2 , -> &U _TXREG2 `*uc &U _debug ]
+"465
 }
-[e :U 907 ]
-"402
-[e $U 908  ]
+[e :U 915 ]
+"466
+}
 [e :U 909 ]
-[; ;pechera.c: 487: }
-[; ;pechera.c: 488: }
-[; ;pechera.c: 489: }
-[; ;pechera.c: 490: }
-[; ;pechera.c: 491: }
-"491
-[e :UE 906 ]
+"467
+[e :U 908 ]
+}
+[e :U 906 ]
+"468
+}
+[e :U 903 ]
+"380
+[e $U 904  ]
+[e :U 905 ]
+[; ;pechera.c: 465: }
+[; ;pechera.c: 466: }
+[; ;pechera.c: 467: }
+[; ;pechera.c: 468: }
+[; ;pechera.c: 469: }
+"469
+[e :UE 902 ]
 }

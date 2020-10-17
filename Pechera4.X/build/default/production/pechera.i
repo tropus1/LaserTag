@@ -9807,33 +9807,6 @@ void Capture(Reception *reception);
 
 void ReadShot(GameConfig *gameConfig, Player *player, Reception *reception);
 
-# 2 "RFID.h"
-typedef struct spi
-{
-unsigned char Datos[50];
-unsigned char contDatos;
-unsigned char cantDatos;
-}SPI;
-
-typedef enum rfidcommand
-{
-Idle = 0,
-Mem = 1,
-GenerateRandomID = 2,
-CalcCRC = 3,
-Transmit = 4,
-NoCmdChange = 7,
-Receive = 8,
-Transceive = 12,
-MFAuthent = 14,
-SoftReset = 15
-}RFIDCommands;
-
-
-void RFIDInit(SPI* spi);
-void RFIDRecive(SPI *spi);
-void RFIDTransmit(SPI *spi, char *data, char length);
-
 # 37 "EUSART.h"
 typedef struct eusart
 {
@@ -9847,12 +9820,11 @@ void EUSARTEnviar(char *reg, EUSART *e, char index);
 void EUSARTEnviar1(char *reg, EUSART *e);
 void EUSARTEnviar2(char *reg, EUSART *e);
 
-# 93 "pechera.c"
+# 92 "pechera.c"
 GameConfig configJuego;
 
 Player jugador;
 
-SPI rfid;
 
 EUSART debug;
 char debugCont = 0;
@@ -10050,7 +10022,7 @@ if(debugCont == 50)
 {
 debugCont = 0;
 
-# 300
+# 298
 debug.CantDatos = 3;
 EUSARTEnviar2(&TXREG2, &debug);
 }
@@ -10058,25 +10030,6 @@ EUSARTEnviar2(&TXREG2, &debug);
 INTCONbits.T0IF = 0;
 }
 
-if(PIE1bits.SSP1IE && PIR1bits.SSP1IF)
-{
-if(rfid.contDatos < rfid.cantDatos)
-{
-char aux = rfid.Datos[rfid.contDatos];
-rfid.Datos[rfid.contDatos] = SSP1BUF;
-SSP1BUF = aux;
-rfid.contDatos++;
-debug.Datos[0] = rfid.contDatos;
-debug.Datos[1] = rfid.cantDatos;
-LC0^=1;
-}
-else
-{
-rfid.contDatos = 0;
-}
-
-PIR1bits.SSP1IF = 0;
-}
 
 if(PIE3bits.TX2IE && PIR3bits.TX2IF)
 {
@@ -10147,7 +10100,6 @@ debug.Datos[0] = 0;
 void main(void)
 {
 Config();
-RFIDInit(&rfid);
 InitDebug();
 
 configJuego.Estado = EnJuego;
@@ -10181,7 +10133,7 @@ PIE5bits.TMR4IE = 1;
 
 jugador.Arma.disparando = 1;
 
-# 437
+# 415
 }
 else if(!PORTBbits.RB0 && jugador.Arma.habilDisparo)
 {

@@ -5,9 +5,9 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\Pechera4.X.production.sym \
   --cmf=dist/default/production\Pechera4.X.production.cmf -z -Q18F46K22 \
-  -oC:\Users\ESPIRA~1\AppData\Local\Temp\s6qg.3 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Pechera4.X.production.map -E1 -ver=XC8 \
-  --acfsm=1493 -ASTACK=0134h-0F37h -pstack=STACK -ACODE=00h-0FFFFh \
+  --acfsm=1493 -ASTACK=0DAh-0F37h -pstack=STACK -ACODE=00h-0FFFFh \
   -ACONST=00h-0FFFFh -ASMALLCONST=01000h-010FFhx240 \
   -AMEDIUMCONST=01000h-0FFFFh -ACOMRAM=01h-05Fh -AABS1=00h-0F37h \
   -ABIGRAM=01h-0F37h -ARAM=060h-0FFh,0100h-01FFhx14,0F00h-0F37h \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\ESPIRA~1\AppData\Local\Temp\s6qg.o \
+  C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o \
   dist/default/production\Pechera4.X.production.o 
 
 Object code version is 3.11
@@ -39,52 +39,49 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ESPIRA~1\AppData\Local\Temp\s6qg.o
-                init                                256      256        4        C       0
+C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
+                init                                1EC      1EC        4        C       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\Pechera4.X.production.o
-                intcodelo                            18       18      23E        C       0
+                intcodelo                            18       18      1D4        C       0
                 intcode                               8        8        6        4       0
-                temp                                 4D       4D        1        1       1
+                temp                                 4C       4C        1        1       1
                 smallconst                         1000     1000        4      800       0
-                intcode_body                       14B8     14B8      1BE      802       0
-                text8                              1004     1004      2C6      802       0
-                text7                              1B8E     1B8E       38      802       0
-                text5                              1A24     1A24       E4      802       0
-                text4                              1B56     1B56       38      802       0
-                text3                              17D6     17D6      134      802       0
-                text2                              190A     190A      11A      802       0
-                text1                              1676     1676      160      802       0
-                text0                              12CA     12CA      1EE      802       0
-                cstackCOMRAM                         30       30       1B        1       1
-                bssBANK1                            100      100       34      100       1
+                intcode_body                       14AC     14AC      1BE      802       0
+                text7                              1004     1004      2C6      802       0
+                text6                              1A5C     1A5C       38      802       0
+                text4                              18FE     18FE       E4      802       0
+                text3                              1A24     1A24       38      802       0
+                text2                              17CA     17CA      134      802       0
+                text1                              166A     166A      160      802       0
+                text0                              12CA     12CA      1E2      802       0
+                cstackCOMRAM                         30       30       1A        1       1
                 bssBANK0                             60       60       7A       60       1
-                dataCOMRAM                           4B       4B        2        1       1
+                dataCOMRAM                           4A       4A        2        1       1
                 bssCOMRAM                             1        1       2F        1       1
-                cinit                              1B08     1B08       4E      802       0
-                idataCOMRAM                        1BC6     1BC6        2      802       0
+                cinit                              19E2     19E2       42      802       0
+                idataCOMRAM                        1A94     1A94        2      802       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
-                intcodelo                            18       18      23E         0
+                intcodelo                            18       18      1D4         0
                 intcode                               8        8        6         0
-                init                                256      256        4         0
+                init                                1EC      1EC        4         0
                 reset_vec                             0        0        4         0
-                intcode_body                       14B8     14B8      1BE         0
-                text8                              1004     1004      2C6         0
-                text7                              1B8E     1B8E       38         0
-                text5                              1A24     1A24       E4         0
-                text4                              1B56     1B56       38         0
-                text3                              17D6     17D6      134         0
-                text2                              190A     190A      11A         0
-                text1                              1676     1676      160         0
-                text0                              12CA     12CA      1EE         0
-                cinit                              1B08     1B08       4E         0
-                idataCOMRAM                        1BC6     1BC6        2         0
+                intcode_body                       14AC     14AC      1BE         0
+                text7                              1004     1004      2C6         0
+                text6                              1A5C     1A5C       38         0
+                text4                              18FE     18FE       E4         0
+                text3                              1A24     1A24       38         0
+                text2                              17CA     17CA      134         0
+                text1                              166A     166A      160         0
+                text0                              12CA     12CA      1E2         0
+                cinit                              19E2     19E2       42         0
+                idataCOMRAM                        1A94     1A94        2         0
 
         CLASS   CONST          
 
@@ -94,9 +91,9 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                temp                                 4D       4D        1         1
-                cstackCOMRAM                         30       30       1B         1
-                dataCOMRAM                           4B       4B        2         1
+                temp                                 4C       4C        1         1
+                cstackCOMRAM                         30       30       1A         1
+                dataCOMRAM                           4A       4A        2         1
                 bssCOMRAM                             1        1       2F         1
 
         CLASS   ABS1           
@@ -109,7 +106,6 @@ TOTAL           Name                               Link     Load   Length     Sp
                 bssBANK0                             60       60       7A         1
 
         CLASS   BANK1          
-                bssBANK1                            100      100       34         1
 
         CLASS   BANK2          
 
@@ -156,13 +152,12 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                bssCOMRAM                      000001  00004D  00004E         1       1  COMRAM  
+                bssCOMRAM                      000001  00004C  00004D         1       1  COMRAM  
                 intcode                        000008  000006  00000E         4       0  CODE    
-                intcodelo                      000018  000242  00025A         C       0  CODE    
+                intcodelo                      000018  0001D8  0001F0         C       0  CODE    
                 bssBANK0                       000060  00007A  0000DA        60       1  BANK0   
-                bssBANK1                       000100  000034  000134       100       1  BANK1   
                 smallconst                     001000  000004  001004       800       0  SMALLCON
-                text8                          001004  000BC4  001BC8       802       0  CODE    
+                text7                          001004  000A92  001A96       802       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -171,7 +166,7 @@ UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
         BANK0            0000DA-0000FF               26
-        BANK1            000134-0001FF               CC
+        BANK1            000100-0001FF              100
         BANK10           000A00-000AFF              100
         BANK11           000B00-000BFF              100
         BANK12           000C00-000CFF              100
@@ -186,38 +181,34 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           00004E-00005F               12
-                         0000DA-0000FF               26
-                         000134-000F37              E04
+        BIGRAM           00004D-00005F               13
+                         0000DA-000F37              E5E
         CODE             000004-000007                4
                          00000E-000017                A
-                         00025A-000FFF              DA6
-                         001BC8-00FFFF             E438
-        COMRAM           00004E-00005F               12
+                         0001F0-000FFF              E10
+                         001A96-00FFFF             E56A
+        COMRAM           00004D-00005F               13
         CONST            000004-000007                4
                          00000E-000017                A
-                         00025A-000FFF              DA6
-                         001BC8-00FFFF             E438
+                         0001F0-000FFF              E10
+                         001A96-00FFFF             E56A
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      001BC8-00FFFF             E438
-        RAM              0000DA-0000FF               26
-                         000134-000F37              100
+        MEDIUMCONST      001A96-00FFFF             E56A
+        RAM              0000DA-000F37              100
         SFR              000F38-000FFF               28
-        SMALLCONST       001BC8-00FFFF              100
-        STACK            000134-000F37              E04
+        SMALLCONST       001A96-00FFFF              100
+        STACK            0000DA-000F37              E5E
 
                                   Symbol Table
 
 Capture@reception         cstackCOMRAM 000032
-EUSARTEnviar2@e           cstackCOMRAM 000042
-EUSARTEnviar2@reg         cstackCOMRAM 000040
-IRS_Low@aux               cstackCOMRAM 00003F
-InitDebug@i               cstackCOMRAM 000040
-InitDebug@i_2154          cstackCOMRAM 000041
-RFIDInit@spi              cstackCOMRAM 000040
-ReadShot@gameConfig       cstackCOMRAM 000040
-ReadShot@player           cstackCOMRAM 000042
-ReadShot@reception        cstackCOMRAM 000044
+EUSARTEnviar2@e           cstackCOMRAM 000041
+EUSARTEnviar2@reg         cstackCOMRAM 00003F
+InitDebug@i               cstackCOMRAM 00003F
+InitDebug@i_2138          cstackCOMRAM 000040
+ReadShot@gameConfig       cstackCOMRAM 00003F
+ReadShot@player           cstackCOMRAM 000041
+ReadShot@reception        cstackCOMRAM 000043
 _ANSELA                   (abs)        000F38
 _ANSELB                   (abs)        000F39
 _ANSELC                   (abs)        000F3A
@@ -233,10 +224,10 @@ _CCPR3L                   (abs)        000F5E
 _CCPR5H                   (abs)        000F56
 _CCPR5L                   (abs)        000F55
 _CCPTMRS0bits             (abs)        000F49
-_Capture                  text8        001004
-_Config                   text5        001A24
+_Capture                  text7        001004
+_Config                   text4        0018FE
 _DatosEL                  bssCOMRAM    000001
-_EUSARTEnviar2            text4        001B56
+_EUSARTEnviar2            text3        001A24
 _INTCON2bits              (abs)        000FF1
 _INTCON3bits              (abs)        000FF0
 _INTCONbits               (abs)        000FF2
@@ -247,12 +238,11 @@ _IPR4bits                 (abs)        000F7C
 _IPR5bits                 (abs)        000F7F
 _IRS_High                 intcode      000008
 _IRS_Low                  intcodelo    000018
-_InitDebug                text3        0017D6
+_InitDebug                text2        0017CA
 _LA2                      (abs)        007C4A
 _LA3                      (abs)        007C4B
 _LATA                     (abs)        000F89
 _LATB                     (abs)        000F8A
-_LC0                      (abs)        007C58
 _PIE1bits                 (abs)        000F9D
 _PIE2bits                 (abs)        000FA0
 _PIE3bits                 (abs)        000FA3
@@ -267,8 +257,7 @@ _PORTBbits                (abs)        000F81
 _PR4                      (abs)        000F52
 _RCONbits                 (abs)        000FD0
 _RCSTA2bits               (abs)        000F71
-_RFIDInit                 text2        00190A
-_ReadShot                 text1        001676
+_ReadShot                 text1        00166A
 _SPBRG2                   (abs)        000F75
 _SPBRGH2                  (abs)        000F76
 _SSP1BUF                  (abs)        000FC9
@@ -359,7 +348,6 @@ __Hbigdata                bigdata      000000
 __Hbigram                 bigram       000000
 __Hbss                    bss          000000
 __HbssBANK0               bssBANK0     000000
-__HbssBANK1               bssBANK1     000000
 __HbssCOMRAM              bssCOMRAM    000000
 __Hcinit                  cinit        000000
 __Hclrtext                clrtext      000000
@@ -377,10 +365,10 @@ __Hidata                  idata        000000
 __HidataCOMRAM            idataCOMRAM  000000
 __Hidloc                  idloc        200008
 __Hifardata               ifardata     000000
-__Hinit                   init         00025A
+__Hinit                   init         0001F0
 __Hintcode                intcode      00000E
 __Hintcode_body           intcode_body 000000
-__Hintcodelo              intcodelo    000256
+__Hintcodelo              intcodelo    0001EC
 __Hintentry               intentry     000000
 __Hintret                 intret       000000
 __Hintsave_regs           intsave_regs 000000
@@ -390,7 +378,7 @@ __HnvFARRAM               nvFARRAM     000000
 __Hnvbit                  nvbit        000000
 __Hnvrram                 nvrram       000000
 __Hparam                  rparam       000000
-__Hpowerup                powerup      000256
+__Hpowerup                powerup      0001EC
 __Hram                    ram          000000
 __Hramtop                 ramtop       001000
 __Hrbit                   rbit         000000
@@ -401,20 +389,19 @@ __Hrparam                 rparam       000000
 __Hsfr                    sfr          000000
 __Hsmallconst             smallconst   001004
 __Hspace_0                (abs)        30000E
-__Hspace_1                (abs)        000134
+__Hspace_1                (abs)        0000DA
 __Hspace_2                (abs)        000000
 __Hstack                  stack        000000
 __Hstruct                 struct       000000
-__Htemp                   temp         00004E
+__Htemp                   temp         00004D
 __Htext                   text         000000
 __Htext0                  text0        000000
 __Htext1                  text1        000000
 __Htext2                  text2        000000
 __Htext3                  text3        000000
 __Htext4                  text4        000000
-__Htext5                  text5        000000
+__Htext6                  text6        000000
 __Htext7                  text7        000000
-__Htext8                  text8        000000
 __LRAM                    (abs)        000001
 __Labs1                   abs1         000000
 __Lbank0                  bank0        000000
@@ -438,7 +425,6 @@ __Lbigdata                bigdata      000000
 __Lbigram                 bigram       000000
 __Lbss                    bss          000000
 __LbssBANK0               bssBANK0     000000
-__LbssBANK1               bssBANK1     000000
 __LbssCOMRAM              bssCOMRAM    000000
 __Lcinit                  cinit        000000
 __Lclrtext                clrtext      000000
@@ -456,7 +442,7 @@ __Lidata                  idata        000000
 __LidataCOMRAM            idataCOMRAM  000000
 __Lidloc                  idloc        200000
 __Lifardata               ifardata     000000
-__Linit                   init         000256
+__Linit                   init         0001EC
 __Lintcode                intcode      000008
 __Lintcode_body           intcode_body 000000
 __Lintcodelo              intcodelo    000018
@@ -469,7 +455,7 @@ __LnvFARRAM               nvFARRAM     000000
 __Lnvbit                  nvbit        000000
 __Lnvrram                 nvrram       000000
 __Lparam                  rparam       000000
-__Lpowerup                powerup      000256
+__Lpowerup                powerup      0001EC
 __Lram                    ram          000000
 __Lramtop                 ramtop       001000
 __Lrbit                   rbit         000000
@@ -484,18 +470,17 @@ __Lspace_1                (abs)        000000
 __Lspace_2                (abs)        000000
 __Lstack                  stack        000000
 __Lstruct                 struct       000000
-__Ltemp                   temp         00004D
+__Ltemp                   temp         00004C
 __Ltext                   text         000000
 __Ltext0                  text0        000000
 __Ltext1                  text1        000000
 __Ltext2                  text2        000000
 __Ltext3                  text3        000000
 __Ltext4                  text4        000000
-__Ltext5                  text5        000000
+__Ltext6                  text6        000000
 __Ltext7                  text7        000000
-__Ltext8                  text8        000000
 __S0                      (abs)        30000E
-__S1                      (abs)        000134
+__S1                      (abs)        0000DA
 __S2                      (abs)        000000
 ___inthi_sp               stack        000000
 ___intlo_sp               stack        000000
@@ -504,39 +489,36 @@ ___rparam_used            (abs)        000001
 ___sp                     stack        000000
 __accesstop               (abs)        000060
 __activetblptr            (abs)        000001
-__end_of_Capture          text8        0012CA
-__end_of_Config           text5        001B08
-__end_of_EUSARTEnviar2    text4        001B8E
-__end_of_IRS_High         intcode_body 001676
-__end_of_IRS_Low          intcodelo    000256
-__end_of_InitDebug        text3        00190A
-__end_of_RFIDInit         text2        001A24
-__end_of_ReadShot         text1        0017D6
-__end_of__initialization  cinit        001B44
-__end_of_main             text0        0014B8
+__end_of_Capture          text7        0012CA
+__end_of_Config           text4        0019E2
+__end_of_EUSARTEnviar2    text3        001A5C
+__end_of_IRS_High         intcode_body 00166A
+__end_of_IRS_Low          intcodelo    0001EC
+__end_of_InitDebug        text2        0018FE
+__end_of_ReadShot         text1        0017CA
+__end_of__initialization  cinit        001A12
+__end_of_main             text0        0014AC
 __end_of_preambulo        smallconst   001002
-__end_ofi1_EUSARTEnviar2  text7        001BC6
-__initialization          cinit        001B08
+__end_ofi1_EUSARTEnviar2  text6        001A94
+__initialization          cinit        0019E2
 __mediumconst             mediumconst  000000
 __pbssBANK0               bssBANK0     000060
-__pbssBANK1               bssBANK1     000100
 __pbssCOMRAM              bssCOMRAM    000001
-__pcinit                  cinit        001B08
+__pcinit                  cinit        0019E2
 __pcstackCOMRAM           cstackCOMRAM 000030
-__pdataCOMRAM             dataCOMRAM   00004B
-__pidataCOMRAM            idataCOMRAM  001BC6
+__pdataCOMRAM             dataCOMRAM   00004A
+__pidataCOMRAM            idataCOMRAM  001A94
 __pintcode                intcode      000008
-__pintcode_body           intcode_body 0014B8
+__pintcode_body           intcode_body 0014AC
 __pintcodelo              intcodelo    000018
 __psmallconst             smallconst   001000
 __ptext0                  text0        0012CA
-__ptext1                  text1        001676
-__ptext2                  text2        00190A
-__ptext3                  text3        0017D6
-__ptext4                  text4        001B56
-__ptext5                  text5        001A24
-__ptext7                  text7        001B8E
-__ptext8                  text8        001004
+__ptext1                  text1        00166A
+__ptext2                  text2        0017CA
+__ptext3                  text3        001A24
+__ptext4                  text4        0018FE
+__ptext6                  text6        001A5C
+__ptext7                  text7        001004
 __ramtop                  ramtop       001000
 __size_of_Capture         (abs)        000000
 __size_of_Config          (abs)        000000
@@ -544,50 +526,48 @@ __size_of_EUSARTEnviar2   (abs)        000000
 __size_of_IRS_High        (abs)        000000
 __size_of_IRS_Low         (abs)        000000
 __size_of_InitDebug       (abs)        000000
-__size_of_RFIDInit        (abs)        000000
 __size_of_ReadShot        (abs)        000000
 __size_of_main            (abs)        000000
 __size_ofi1_EUSARTEnviar2 (abs)        000000
 __smallconst              smallconst   001000
 _cantBytesEL              bssCOMRAM    000007
 _configJuego              bssCOMRAM    00002A
-_contBitEL                dataCOMRAM   00004B
+_contBitEL                dataCOMRAM   00004A
 _contByteEL               bssCOMRAM    000008
 _debug                    bssBANK0     0000A5
 _debugCont                bssCOMRAM    00000A
-_flancoEL                 dataCOMRAM   00004C
+_flancoEL                 dataCOMRAM   00004B
 _jugador                  bssCOMRAM    00000B
 _main                     text0        0012CA
 _preambulo                smallconst   001001
 _primerosBitsEL           bssCOMRAM    000009
 _receptores               bssBANK0     000060
-_rfid                     bssBANK1     000100
-btemp                     temp         00004D
-end_of_initialization     cinit        001B44
+btemp                     temp         00004C
+end_of_initialization     cinit        001A12
 i1EUSARTEnviar2@e         cstackCOMRAM 000034
 i1EUSARTEnviar2@reg       cstackCOMRAM 000032
-i1_EUSARTEnviar2          text7        001B8E
-int$flags                 temp         00004D
-int_func                  intcode_body 0014B8
+i1_EUSARTEnviar2          text6        001A5C
+int$flags                 temp         00004C
+int_func                  intcode_body 0014AC
 intlevel0                 text         000000
 intlevel1                 text         000000
 intlevel2                 text         000000
 intlevel3                 text         000000
 stackhi                   (abs)        000F37
-stacklo                   (abs)        000134
-start                     init         000256
-start_initialization      cinit        001B08
-ttemp5                    temp         00004E
-ttemp6                    temp         000051
-ttemp7                    temp         000055
-wtemp8                    temp         00004E
+stacklo                   (abs)        0000DA
+start                     init         0001EC
+start_initialization      cinit        0019E2
+ttemp5                    temp         00004D
+ttemp6                    temp         000050
+ttemp7                    temp         000054
+wtemp8                    temp         00004D
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 393 in file "pechera.c"
+		line 372 in file "pechera.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -611,7 +591,6 @@ Total ram usage:        0 bytes
 		_Config
 		_EUSARTEnviar2
 		_InitDebug
-		_RFIDInit
 		_ReadShot
  This function is called by:
 		Startup code after reset
@@ -622,11 +601,11 @@ Total ram usage:        0 bytes
  Defined at:
 		line 62 in file "LReception.c"
  Parameters:    Size  Location     Type
-  gameConfig      2   16[COMRAM] PTR struct gameConfig
+  gameConfig      2   15[COMRAM] PTR struct gameConfig
 		 -> configJuego(6), 
-  player          2   18[COMRAM] PTR struct player
+  player          2   17[COMRAM] PTR struct player
 		 -> jugador(31), 
-  reception       2   20[COMRAM] PTR struct reception
+  reception       2   19[COMRAM] PTR struct reception
 		 -> receptores(69), 
  Auto vars:     Size  Location     Type
 		None
@@ -653,45 +632,14 @@ Total ram usage:       11 bytes
  This function uses a non-reentrant model
 
 
- *************** function _RFIDInit *****************
- Defined at:
-		line 4 in file "RFID.c"
- Parameters:    Size  Location     Type
-  spi             2   16[COMRAM] PTR struct spi
-		 -> rfid(52), 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    3
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
  *************** function _InitDebug *****************
  Defined at:
-		line 343 in file "pechera.c"
+		line 322 in file "pechera.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               1   17[COMRAM] unsigned char 
   i               1   16[COMRAM] unsigned char 
+  i               1   15[COMRAM] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -719,9 +667,9 @@ Total ram usage:        2 bytes
  Defined at:
 		line 35 in file "EUSART.c"
  Parameters:    Size  Location     Type
-  reg             2   16[COMRAM] PTR unsigned char 
+  reg             2   15[COMRAM] PTR unsigned char 
 		 -> TXREG2(1), 
-  e               2   18[COMRAM] PTR struct eusart
+  e               2   17[COMRAM] PTR struct eusart
 		 -> debug(53), 
  Auto vars:     Size  Location     Type
 		None
@@ -780,11 +728,11 @@ Total ram usage:        0 bytes
 
  *************** function _IRS_Low *****************
  Defined at:
-		line 226 in file "pechera.c"
+		line 224 in file "pechera.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  aux             1   15[COMRAM] unsigned char 
+		None
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -795,10 +743,10 @@ Total ram usage:        0 bytes
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          7       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        8 bytes
+      Totals:         7       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        7 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    2
  This function calls:
@@ -875,7 +823,7 @@ Total ram usage:        6 bytes
 
  *************** function _IRS_High *****************
  Defined at:
-		line 112 in file "pechera.c"
+		line 110 in file "pechera.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -907,38 +855,33 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 EUSART.c
-		_EUSARTEnviar2 		CODE           	1B56	0000	57
+		_EUSARTEnviar2 		CODE           	1A24	0000	57
 
 EUSART.c estimated size: 57
 
 LReception.c
-		_ReadShot      		CODE           	1676	0000	353
+		_ReadShot      		CODE           	166A	0000	353
 		_Capture       		CODE           	1004	0000	711
 
 LReception.c estimated size: 1064
 
-RFID.c
-		_RFIDInit      		CODE           	190A	0000	283
-
-RFID.c estimated size: 283
-
 config.c
-		_Config        		CODE           	1A24	0000	229
+		_Config        		CODE           	18FE	0000	229
 
 config.c estimated size: 229
 
 pechera.c
-		_main          		CODE           	12CA	0000	495
-		_IRS_Low       		CODE           	0018	0000	575
-		_InitDebug     		CODE           	17D6	0000	309
+		_main          		CODE           	12CA	0000	483
+		_IRS_Low       		CODE           	0018	0000	469
+		_InitDebug     		CODE           	17CA	0000	309
 		_IRS_High      		CODE           	0008	0000	453
 
-pechera.c estimated size: 1832
+pechera.c estimated size: 1714
 
 shared
 		_preambulo     		SMALLCONST     	1001	0000	2
-		i1_EUSARTEnviar2		CODE           	1B8E	0000	57
-		__initialization		CODE           	1B08	0000	61
+		i1_EUSARTEnviar2		CODE           	1A5C	0000	57
+		__initialization		CODE           	19E2	0000	49
 
-shared estimated size: 120
+shared estimated size: 108
 
