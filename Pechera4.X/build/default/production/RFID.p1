@@ -1,31 +1,31 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"2 RFID.h
+"60 RFID.h
 [s S1 `uc -> 50 `i `uc 1 `uc 1 ]
 [n S1 spi Datos contDatos cantDatos ]
 "15259 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f46k22.h
 [v _SSP1BUF `Vuc ~T0 @X0 0 e@4041 ]
-[; ;RFID.h: 2: typedef struct spi
-[; ;RFID.h: 3: {
-[; ;RFID.h: 4: unsigned char Datos[50];
-[; ;RFID.h: 5: unsigned char contDatos;
-[; ;RFID.h: 6: unsigned char cantDatos;
-[; ;RFID.h: 7: }SPI;
-[; ;RFID.h: 9: typedef enum rfidcommand
-[; ;RFID.h: 10: {
-[; ;RFID.h: 11: Idle = 0,
-[; ;RFID.h: 12: Mem = 1,
-[; ;RFID.h: 13: GenerateRandomID = 2,
-[; ;RFID.h: 14: CalcCRC = 3,
-[; ;RFID.h: 15: Transmit = 4,
-[; ;RFID.h: 16: NoCmdChange = 7,
-[; ;RFID.h: 17: Receive = 8,
-[; ;RFID.h: 18: Transceive = 12,
-[; ;RFID.h: 19: MFAuthent = 14,
-[; ;RFID.h: 20: SoftReset = 15
-[; ;RFID.h: 21: }RFIDCommands;
-[; ;RFID.h: 24: void RFIDInit(SPI* spi);
-[; ;RFID.h: 25: void RFIDRecive(SPI *spi);
-[; ;RFID.h: 26: void RFIDTransmit(SPI *spi, char *data, char length);
+[; ;RFID.h: 60: typedef struct spi
+[; ;RFID.h: 61: {
+[; ;RFID.h: 62: unsigned char Datos[50];
+[; ;RFID.h: 63: unsigned char contDatos;
+[; ;RFID.h: 64: unsigned char cantDatos;
+[; ;RFID.h: 65: }SPI;
+[; ;RFID.h: 67: typedef enum rfidcommand
+[; ;RFID.h: 68: {
+[; ;RFID.h: 69: Idle = 0,
+[; ;RFID.h: 70: Mem = 1,
+[; ;RFID.h: 71: GenerateRandomID = 2,
+[; ;RFID.h: 72: CalcCRC = 3,
+[; ;RFID.h: 73: Transmit = 4,
+[; ;RFID.h: 74: NoCmdChange = 7,
+[; ;RFID.h: 75: Receive = 8,
+[; ;RFID.h: 76: Transceive = 12,
+[; ;RFID.h: 77: MFAuthent = 14,
+[; ;RFID.h: 78: SoftReset = 15
+[; ;RFID.h: 79: }RFIDCommands;
+[; ;RFID.h: 82: void RFIDInit(SPI* spi);
+[; ;RFID.h: 83: void RFIDRecive(SPI *spi);
+[; ;RFID.h: 84: void RFIDTransmit(SPI *spi, char *data, char length);
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);

@@ -74,7 +74,6 @@
 #include <xc.h>
 #include <pic18f46k22.h>
 #include "LReception.h"
-#include "RFID.h"
 #include "EUSART.h"
 
 //Tiempos de láser
@@ -94,7 +93,6 @@ GameConfig configJuego; //Guarda la configuración del juego
 
 Player jugador; //Guarda las variables del jugador
 
-SPI rfid;
 
 EUSART debug;
 char debugCont = 0;
@@ -117,15 +115,6 @@ void __interrupt(high_priority) IRS_High()
         
         
         INTCONbits.INT0IF = 0; 
-    }
-    
-    //RFID
-    if(INTCON3bits.INT2IE && INTCON3bits.INT2IF)
-    {
-        
-        debug.Datos[3]^=1;
-        
-        INTCON3bits.INT2IF = 0;
     }
     
     if(PIE5bits.TMR4IE && PIR5bits.TMR4IF) //Transmisión por láser
@@ -304,25 +293,6 @@ void __interrupt(low_priority) IRS_Low()
         INTCONbits.T0IF = 0;
     }
     
-    if(PIE1bits.SSP1IE && PIR1bits.SSP1IF) //RFID
-    { 
-        if(rfid.contDatos < rfid.cantDatos) //Verifica que halla datos para enviar
-        {
-            char aux = rfid.Datos[rfid.contDatos]; //variable para el intercambio de bytes
-            rfid.Datos[rfid.contDatos] = SSP1BUF;
-            SSP1BUF = aux;
-            rfid.contDatos++;
-            debug.Datos[0] = rfid.contDatos;
-            debug.Datos[1] = rfid.cantDatos;
-            LC0^=1;
-        }
-        else
-        {
-            rfid.contDatos = 0;
-        }
-        
-        PIR1bits.SSP1IF = 0;
-    }
     
     if(PIE3bits.TX2IE && PIR3bits.TX2IF)
     {
@@ -393,7 +363,6 @@ void InitDebug()
 void main(void) 
 {
     Config();
-    RFIDInit(&rfid);
     InitDebug();  
     
     configJuego.Estado = EnJuego;
