@@ -117,15 +117,6 @@ void __interrupt(high_priority) IRS_High()
         INTCONbits.INT0IF = 0; 
     }
     
-    //RFID
-    if(INTCON3bits.INT2IE && INTCON3bits.INT2IF)
-    {
-        
-        debug.Datos[3]^=1;
-        
-        INTCON3bits.INT2IF = 0;
-    }
-    
     if(PIE5bits.TMR4IE && PIR5bits.TMR4IF) //Transmisión por láser
     {
         if(primerosBitsEL < 15) //Genera los primeros bits (Todos unos y un cero)

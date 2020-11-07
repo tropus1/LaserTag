@@ -371,7 +371,7 @@ text7 1004 1A95 CODE 1004 0
 %locals
 dist/default/production\Pechera4.X.production.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f46k22.h
-C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
+C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
 2400 19E2 0 CODE 0
 2402 19E2 0 CODE 0
 2405 19E2 0 CODE 0
@@ -599,7 +599,7 @@ config.c
 111 19DC 0 CODE 0
 112 19DE 0 CODE 0
 113 19E0 0 CODE 0
-C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
+C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
 4557 18 0 CODE 0
 pechera.c
 224 18 0 CODE 0
@@ -687,7 +687,7 @@ LReception.c
 55 12BA 0 CODE 0
 57 12BA 0 CODE 0
 60 12C8 0 CODE 0
-C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
+C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
 5544 8 0 CODE 0
 pechera.c
 110 8 0 CODE 0

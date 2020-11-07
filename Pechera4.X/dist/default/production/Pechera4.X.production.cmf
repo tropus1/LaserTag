@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
+$C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 1EC 1EC 4 1
 reset_vec CODE 0 0 0 4 1
@@ -88,7 +88,7 @@ MEDIUMCONST 1A96-FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Pechera4.X.production.o
-18 intcodelo CODE >4557:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
+18 intcodelo CODE >4557:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
 18 intcodelo CODE >224:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
 36 intcodelo CODE >227:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
 52 intcodelo CODE >229:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
@@ -136,7 +136,7 @@ E6 intcodelo CODE >269:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
 1C6 intcodelo CODE >316:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
 1CA intcodelo CODE >317:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
 1CC intcodelo CODE >320:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
-8 intcode CODE >5544:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
+8 intcode CODE >5544:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
 8 intcode CODE >110:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
 14AC intcode_body CODE >110:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
 14B4 intcode_body CODE >113:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
@@ -420,40 +420,40 @@ E6 intcodelo CODE >269:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
 1488 text0 CODE >463:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
 148C text0 CODE >464:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
 14A4 text0 CODE >467:E:\Proyectos\LaserTagGit\Pechera4.X\pechera.c
-19E2 cinit CODE >2400:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19E2 cinit CODE >2402:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19E2 cinit CODE >2405:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19E2 cinit CODE >2459:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19E4 cinit CODE >2460:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19E6 cinit CODE >2461:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19E8 cinit CODE >2462:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19EA cinit CODE >2463:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19EC cinit CODE >2464:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19EE cinit CODE >2465:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19F0 cinit CODE >2466:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19F4 cinit CODE >2467:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19F6 cinit CODE >2468:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19FA cinit CODE >2472:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-19FE cinit CODE >2473:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A00 cinit CODE >2474:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A00 cinit CODE >2475:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A02 cinit CODE >2476:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A04 cinit CODE >2477:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A06 cinit CODE >2480:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A0A cinit CODE >2481:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A0C cinit CODE >2482:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A0C cinit CODE >2483:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A0E cinit CODE >2484:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A10 cinit CODE >2485:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A12 cinit CODE >2491:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A12 cinit CODE >2493:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A14 cinit CODE >2494:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A16 cinit CODE >2496:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A18 cinit CODE >2497:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A1A cinit CODE >2498:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A1C cinit CODE >2499:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A1E cinit CODE >2500:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
-1A20 cinit CODE >2501:C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.s
+19E2 cinit CODE >2400:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19E2 cinit CODE >2402:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19E2 cinit CODE >2405:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19E2 cinit CODE >2459:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19E4 cinit CODE >2460:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19E6 cinit CODE >2461:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19E8 cinit CODE >2462:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19EA cinit CODE >2463:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19EC cinit CODE >2464:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19EE cinit CODE >2465:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19F0 cinit CODE >2466:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19F4 cinit CODE >2467:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19F6 cinit CODE >2468:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19FA cinit CODE >2472:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+19FE cinit CODE >2473:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A00 cinit CODE >2474:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A00 cinit CODE >2475:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A02 cinit CODE >2476:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A04 cinit CODE >2477:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A06 cinit CODE >2480:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A0A cinit CODE >2481:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A0C cinit CODE >2482:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A0C cinit CODE >2483:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A0E cinit CODE >2484:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A10 cinit CODE >2485:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A12 cinit CODE >2491:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A12 cinit CODE >2493:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A14 cinit CODE >2494:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A16 cinit CODE >2496:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A18 cinit CODE >2497:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A1A cinit CODE >2498:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A1C cinit CODE >2499:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A1E cinit CODE >2500:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
+1A20 cinit CODE >2501:C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -475,7 +475,7 @@ __Hspace_2 0 0 ABS 0 - dist/default/production\Pechera4.X.production.o
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\Pechera4.X.production.o
 _SSP1STATbits FC7 0 ABS 0 - dist/default/production\Pechera4.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Pechera4.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
 __end_of_InitDebug 18FE 0 CODE 0 text2 dist/default/production\Pechera4.X.production.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Pechera4.X.production.o
 _T1CONbits FCD 0 ABS 0 - dist/default/production\Pechera4.X.production.o
@@ -485,10 +485,10 @@ _LATA F89 0 ABS 0 - dist/default/production\Pechera4.X.production.o
 _LATB F8A 0 ABS 0 - dist/default/production\Pechera4.X.production.o
 _TMR4 F53 0 ABS 0 - dist/default/production\Pechera4.X.production.o
 _WPUB F61 0 ABS 0 - dist/default/production\Pechera4.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
+___sp 0 0 STACK 2 stack C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
 _main 12CA 0 CODE 0 text0 dist/default/production\Pechera4.X.production.o
 btemp 4C 0 COMRAM 1 temp dist/default/production\Pechera4.X.production.o
-start 1EC 0 CODE 0 init C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
+start 1EC 0 CODE 0 init C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
 EUSARTEnviar2@reg 3F 0 COMRAM 1 cstackCOMRAM dist/default/production\Pechera4.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Pechera4.X.production.o
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\Pechera4.X.production.o
@@ -505,11 +505,11 @@ ttemp7 54 0 COMRAM 1 temp dist/default/production\Pechera4.X.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Pechera4.X.production.o
 _jugador B 0 COMRAM 1 bssCOMRAM dist/default/production\Pechera4.X.production.o
 _ReadShot 166A 0 CODE 0 text1 dist/default/production\Pechera4.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
-intlevel0 0 0 CODE 0 text C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
-intlevel1 0 0 CODE 0 text C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
-intlevel2 0 0 CODE 0 text C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
-intlevel3 0 0 CODE 0 text C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
+__accesstop 60 0 ABS 0 - C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
+intlevel0 0 0 CODE 0 text C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
+intlevel1 0 0 CODE 0 text C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
+intlevel2 0 0 CODE 0 text C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
+intlevel3 0 0 CODE 0 text C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Pechera4.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Pechera4.X.production.o
 wtemp8 4D 0 COMRAM 1 temp dist/default/production\Pechera4.X.production.o
@@ -530,8 +530,8 @@ _ANSELA F38 0 ABS 0 - dist/default/production\Pechera4.X.production.o
 _ANSELB F39 0 ABS 0 - dist/default/production\Pechera4.X.production.o
 _ANSELC F3A 0 ABS 0 - dist/default/production\Pechera4.X.production.o
 _ANSELD F3B 0 ABS 0 - dist/default/production\Pechera4.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Pechera4.X.production.o
 ReadShot@player 41 0 COMRAM 1 cstackCOMRAM dist/default/production\Pechera4.X.production.o
 _CCPR1H FBF 0 ABS 0 - dist/default/production\Pechera4.X.production.o
@@ -606,7 +606,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production\Pechera4.X.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production\Pechera4.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Pechera4.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Pechera4.X.production.o
-__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
+__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\Pechera4.X.production.o
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\Pechera4.X.production.o
 _primerosBitsEL 9 0 COMRAM 1 bssCOMRAM dist/default/production\Pechera4.X.production.o
@@ -707,8 +707,8 @@ _RCSTA2bits F71 0 ABS 0 - dist/default/production\Pechera4.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Pechera4.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Pechera4.X.production.o
 __size_of_Capture 0 0 ABS 0 - dist/default/production\Pechera4.X.production.o
-stackhi F37 0 ABS 0 - C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
-stacklo DA 0 ABS 0 - C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
+stackhi F37 0 ABS 0 - C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
+stacklo DA 0 ABS 0 - C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\Pechera4.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\Pechera4.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\Pechera4.X.production.o
@@ -746,7 +746,7 @@ __ptext4 18FE 0 CODE 0 text4 dist/default/production\Pechera4.X.production.o
 __ptext6 1A5C 0 CODE 0 text6 dist/default/production\Pechera4.X.production.o
 __ptext7 1004 0 CODE 0 text7 dist/default/production\Pechera4.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\Pechera4.X.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\ESPIRA~1\AppData\Local\Temp\s5ok.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\ESPIRA~1\AppData\Local\Temp\s77o.o
 __Lpowerup 1EC 0 CODE 0 powerup dist/default/production\Pechera4.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Pechera4.X.production.o
 _T4CONbits F51 0 ABS 0 - dist/default/production\Pechera4.X.production.o
