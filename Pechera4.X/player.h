@@ -25,14 +25,15 @@
  * Comments:
  * Revision history: 
  */
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include "config.h"
 
 typedef enum playerState
 {
     Vivo, 
-    Muerto,
-    Revivir, 
-    Morir
+    Muerto
 }EstadoJugador;
 
 typedef enum equipo 
@@ -48,11 +49,11 @@ typedef enum equipo
 
 typedef struct gun
 {
-    unsigned char damage; //Daño del arma del jugador
+    unsigned char damage; //Daï¿½o del arma del jugador
     unsigned char tDisparos; //Tiempo de cadencia (tDisparo * 0.02)s
     unsigned char contDisparo; //Contador del tiempo de disparo
-    Bit disparando; //Indica si se disparó
-    Bit habilDisparo; //Habilita la reactivación del disparo
+    Bit disparando; //Indica si se disparï¿½
+    Bit habilDisparo; //Habilita la reactivaciï¿½n del disparo
 }Gun;
 
 typedef struct statistics
@@ -74,12 +75,12 @@ typedef struct statistics
 
 typedef struct player
 {
-    EstadoJugador estado;
-    Equipo equipo;
+    EstadoJugador Estado;
+    Equipo Equipo;
     unsigned char ID; //ID del jugador
     unsigned char Vida; //Cantidad de vida del jugador
     unsigned char Balas, BalasMax; //Balas y Balas por cargador
-    unsigned char Cargadores, CargadoresMax; //Cantidad de cargadores y Cantidad de cargadores máxima
+    unsigned char Cargadores, CargadoresMax; //Cantidad de cargadores y Cantidad de cargadores mï¿½xima
     unsigned char contAssits; //Cuenta la cantidad que le pegaron
     unsigned char IDKiller; //Guarda el ID del que lo mata
     
@@ -106,3 +107,4 @@ typedef struct player
     Statistics Estadisticas; 
 }Player;
 
+#endif

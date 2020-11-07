@@ -36,7 +36,7 @@ typedef enum bits
     on = 1
 }Bit;
 
-typedef enum gameState
+typedef enum sysState
 {
     Inicializacion,
     EsperaJuego,
@@ -50,7 +50,7 @@ typedef enum gameState
     ErrorConfig,
     ErrorInit,
     ErrorLaser
-}EstadoJuego;
+} EstadoSistema;
 
 typedef struct gameConfig
 {
