@@ -109,8 +109,8 @@ unsigned char cantBytesEL = 0; //Indica la cantidad de bytes que se van a transm
 
 Reception receptores[3];
 
-void __interrupt(high_priority) IRS_High() 
-{ 
+void __interrupt(high_priority) IRS_High() {
+     
     //Disparo
     if(INTCONbits.INT0IE && INTCONbits.INT0IF)
     {
@@ -214,8 +214,8 @@ void __interrupt(high_priority) IRS_High()
     }
 }
 
-void __interrupt(low_priority) IRS_Low()
-{
+void __interrupt(low_priority) IRS_Low(){
+
     //Recepci�n 1
     if(PIE1bits.CCP1IE && PIR1bits.CCP1IF)
     {
@@ -312,8 +312,8 @@ void __interrupt(low_priority) IRS_Low()
     }
 }
 
-void InitDebug()
-{
+void InitDebug(){
+
     configJuego.Estado = Inicializacion;
     configJuego.FriendlyFire = 0;
     configJuego.RestaKillEquipo = 3;
@@ -429,6 +429,7 @@ void check_enviroment(){
 }
 
 void  player_state_choice(){
+
     check_enviroment();      // Sabe lo que paso en el juego
     switch (player.Estado){
 
@@ -447,15 +448,9 @@ void  player_state_choice(){
 
 }
 
-void main(void) 
-{
-    Config();
-    InitDebug();  
-    configJuego.Estado = EnJuego;
-    
-    while(1)
-    {
-        switch (configJuego.Estado){
+void make_state_choice(GameConfig configJuego){
+
+    switch (configJuego.Estado){
 
         case EnJuego:
             player_state_choice();
@@ -508,11 +503,16 @@ void main(void)
         default:
             break;
         }
-         if(configJuego.Estado == EnJuego){
+}
 
+void main(void){
 
-            void jugando();  
-         }
-          
+    Config();
+    InitDebug();  
+    configJuego.Estado = EnJuego;
+    
+    while(1){
+        
+        make_state_choice(configJuego);     
     }
 }
