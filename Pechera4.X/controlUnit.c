@@ -312,6 +312,12 @@ void __interrupt(low_priority) IRS_Low(){
     }
 }
 
+void InitPaneles(){
+
+    for(char i = 0; i < 3; i++){
+       InitPanelEntrace(receptores[i]);
+    }
+}
 void InitDebug(){
 
     configJuego.Estado = Inicializacion;
@@ -329,6 +335,7 @@ void InitDebug(){
     jugador.BalasMax = 20;
     jugador.Cargadores = 1;
     jugador.CargadoresMax = 5;
+
     for(char i = 0; i < 10; i++)
         jugador.IDHitters[i] = 0;
     jugador.contAssits = 0;
@@ -346,15 +353,7 @@ void InitDebug(){
     jugador.Estadisticas.Assists = 0;
     jugador.Estadisticas.Punteria = 0;
     
-    for(char i = 0; i < 3; i++)
-    {
-        receptores[i].esperandoInicioRL = 1;
-        receptores[i].DatoLaser = 0;
-        receptores[i].contDatosRecL = 0;
-        receptores[i].cantDatosRecL = 0;
-        receptores[i].nBitR = 0;
-        receptores[i].DatosLRecibidoFlag = 0;
-    }
+    
     
     debug.Transmitiendo = 0;
     debug.CantDatos = 1;
@@ -457,7 +456,7 @@ void make_state_choice(GameConfig configJuego){
             break;
 
         case Inicializacion:
-
+            //InitPaneles();
             break;
 
         case EsperaJuego:
